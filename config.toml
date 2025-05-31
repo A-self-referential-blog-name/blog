@@ -1,0 +1,44 @@
+defaultContentLanguage = 'en'             # Английский — язык по умолчанию (корень сайта)
+defaultContentLanguageInSubdir = false    # Английский без подкаталога, остальные — в папках
+title = 'Contestability'               # Название сайта на основном языке
+theme = 'PaperMod'
+canonifyURLs = true
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+    title = "A self-referential blog name"
+    contentDir = "content/en"
+    languageCode = "en-us"
+
+  [languages.ru]
+    languageName = "Русский"
+    weight = 2
+    title = "Название блога с самореференцией"
+    contentDir = "content/ru"
+    languageCode = "ru"
+
+  [languages.uk]
+    languageName = "Українська"
+    weight = 3
+    title = "Самореферентна назва блогу"
+    contentDir = "content/uk"
+    languageCode = "uk"
+
+[params]
+  env = "production"
+  defaultTheme = "auto"
+  # ShowReadingTime = true
+  # ShowPostNavLinks = true
+  # ShowBreadCrumbs = true
+  # ShowCodeCopyButtons = true
+  # ShowToc = true
+  TocOpen = false
+  ShowLanguageSwitcher = true
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1

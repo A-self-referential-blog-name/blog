@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Home on A self-referential blog name</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content in Home on A self-referential blog name</description>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 30 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Me</title>
+      <link>//localhost:1313/philosophyish/about-me/</link>
+      <pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/philosophyish/about-me/</guid>
+      <description>&lt;p&gt;Born in 1990. Living in Ukraine. Could have become a mathematician and gone abroad (was in the IMO 2007). Toward the end of school (2006–2007), I fell into a negative psychological state that lasted for many years (stayed at home, did nothing, and felt awful). I don’t know what it was, how such a thing is even possible, or why it happened to me. Now, I am &amp;lsquo;in a deep hole&amp;rsquo; (not psychologically, but practically).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

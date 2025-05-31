@@ -1,0 +1,38 @@
+<header class="header">
+  <nav class="nav" style="display:flex;align-items:center;padding:0 .75rem;width:100%;box-sizing:border-box;">
+    <!-- ЛОГО --><div class="logo">
+      {{ $title := site.Title }}<a href="{{ "" | absLangURL }}">{{ $title }}</a>
+    </div>
+
+    <div class="right">
+      <!-- МЕНЮ -->
+      <ul id="menu">
+        {{ range site.Menus.main }}
+          <li><a href="{{ .URL | absLangURL }}">
+            <span {{ if eq (.URL | absLangURL) ($.Permalink | absLangURL) }}class="active"{{ end }}>{{ .Name }}</span>
+          </a></li>
+        {{ end }}
+      </ul>
+
+      <!-- ТУМБЛЕР -->
+      <button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
+
+      <!-- ЯЗЫКИ -->
+      <span class="lang-switch">
+        {{ range $i, $lang := site.Languages }}
+          {{ $code := $lang.Lang }}
+          {{ $tr := where $.Page.Translations "Lang" $code }}
+          {{/* вывод */}}
+          {{ if eq $.Page.Lang $code }}
+            <span class="current">{{ upper $code }}</span>
+          {{ else if gt (len $tr) 0 }}
+            <a href="{{ (index $tr 0).RelPermalink }}">{{ upper $code }}</a>
+          {{ else }}
+            <a href="{{ cond (ne $code "en") (print "/" $code "/") "/" }}">{{ upper $code }}</a>
+          {{ end }}
+          {{ if lt (add $i 1) (len site.Languages) }} | {{ end }}
+        {{ end }}
+      </span>
+    </div>
+  </nav>
+</header>

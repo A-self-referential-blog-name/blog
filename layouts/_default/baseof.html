@@ -1,0 +1,40 @@
+{{/* ------------------------------------------------------------------
+     layouts/_default/baseof.html
+     (полный файл, вставить без изменений)
+------------------------------------------------------------------ */}}
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+  {{ partial "head.html" . }}            {{/* базовый <head> от PaperMod */}}
+
+  {{/* ---------- наши пользовательские стили ---------- */}}
+  {{ $css := resources.Get "css/custom.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+  {{/* ---------- скрипт: проставляем класс dark/light до отрисовки */}}
+  <script>
+    (function () {
+      try {
+        const theme = localStorage.getItem('pref-theme') || 'dark';  // тёмная по умолчанию
+        document.documentElement.classList.add(theme);
+      } catch (_) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+
+  {{/* ---------- скрипт переключателя темы ---------- */}}
+  {{ $js := resources.Get "js/theme-toggle.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+</head>
+
+<body>
+  {{ partial "header.html" . }}
+
+  <main class="main">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ partial "footer.html" . }}
+</body>
+</html>

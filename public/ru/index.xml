@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Главная страница on Название блога с самореференцией</title>
+    <link>//localhost:1313/ru/</link>
+    <description>Recent content in Главная страница on Название блога с самореференцией</description>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>ru</language>
+    <lastBuildDate>Fri, 30 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/ru/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Обо мне</title>
+      <link>//localhost:1313/ru/philosophyish/about-me/</link>
+      <pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/ru/philosophyish/about-me/</guid>
+      <description>&lt;p&gt;1990 г.р. Украина. Мог стать математиком и уехать за границу (был на IMO 2007). С конца школы (2006-2007) у меня началось негативное психологическое состояние, которое продолжалось много лет (я сидел дома, ничего не делал, и мне было плохо). Я не знаю, что это было, как такое вообще возможно и почему именно со мной. Сейчас я &amp;ldquo;в глубокой яме&amp;rdquo; (не психологически, но фактически).&lt;/p&gt;
+&lt;p&gt;С 2015 по 2020 &amp;ldquo;в стол&amp;rdquo; много читал/думал/делал записи о том, что считаю философией в ее лучших проявлениях. В 2020 собрал свои записи в тексты и пытался связаться с философами в Украине и РФ, чтобы узнать, что делать дальше, но они (почти все) не ответили, и я &amp;ldquo;выпал&amp;rdquo;. Таким образом, большинство записей, из которых составлены написанные на данный (2025) момент тексты, сделаны в 2015-2020.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
