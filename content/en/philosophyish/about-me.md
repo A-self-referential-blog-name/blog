@@ -4,7 +4,7 @@ date: 2025-05-30
 slug: "about-me"
 ---
 
-Born in 1990. Living in Ukraine. Could have become a mathematician and gone abroad (was in the IMO 2007). Toward the end of school (2006–2007), I fell into a negative psychological state that lasted for many years (stayed at home, did nothing, and felt awful). I don’t know what it was, how such a thing is even possible, or why it happened to me. Now, I am 'in a deep hole' (not psychologically, but practically).
+Born in 1990. Living in Ukraine. Could have become a mathematician and gone abroad (was in the IMO 2007). Toward the end of high school (2006–2007), I fell into a negative psychological state that lasted for many years (stayed at home, did nothing, and felt awful). I don’t know what it was, how such a thing is even possible, or why it happened to me. Now, I am 'in a deep hole' (not psychologically, but practically).
 
 From 2015 to 2020, I read, thought, and made notes 'for myself' about what I consider philosophy at its best. In 2020, I compiled my notes into texts and tried to reach out to philosophers in Ukraine and Russia to ask what I should do next, but almost none of them replied, and I 'dropped out'. Thus, most of the notes from which the texts written as of now (in 2025) are composed were made between 2015 and 2020.
 
