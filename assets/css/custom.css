@@ -45,3 +45,22 @@ html.dark  h5,html.dark  h6,html.dark  strong,html.dark  b{ color:#eee; }
 main.main{ margin-top:4rem; }   /* ← было 2.5rem */
 
 /* (остальные стили, если появятся, добавляй ниже) */
+
+/* ───────── Контрастный текст в LIGHT-теме ───────── */
+
+/* 1. Основные CSS-переменные PaperMod */
+html.light{
+  --theme:     #000;   /* цвет h1–h6 */
+  --entry:     #000;   /* основной текст внутри статьи */
+  --secondary: #333;   /* даты, подписи к картинкам и т.д. */
+  --tertiary:  #666;   /* ещё более второстепенные элементы */
+}
+
+/* 2. Подавляем пониженную opacity, которую тема ставит
+      ссылкам/заголовкам в светлом режиме */
+html.light body,
+html.light .post-content,
+html.light a{
+  color: inherit !important;
+  opacity: 1 !important;
+}
