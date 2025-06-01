@@ -1,43 +1,29 @@
-{{/* ------------------------------------------------------------------
-     layouts/_default/baseof.html
-     (полный файл, вставить без изменений)
------------------------------------------------------------------- */}}
+{{/*  layouts/_default/baseof.html  */}}
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ .Site.Language.Lang }}" class="dark">
 <head>
-  {{ partial "head.html" . }}            {{/* базовый <head> от PaperMod */}}
+  {{ partial "head.html" . }}
 
-  {{/* ---------- наши пользовательские стили ---------- */}}
-  {{ $css := resources.Get "css/custom.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
-
-  {{/* ---------- скрипт: проставляем класс dark/light до отрисовки */}}
+  <!-- Ставим тему ещё до рендера, чтобы не мигало -->
   <script>
     (function () {
-      try {
-        const theme = localStorage.getItem('pref-theme') || 'dark';  // тёмная по умолчанию
-        document.documentElement.classList.add(theme);
-      } catch (_) {
-        document.documentElement.classList.add('dark');
-      }
+      const storageKey = 'theme';                                 // единый ключ
+      const saved      = localStorage.getItem(storageKey);        // 'dark' | 'light' | null
+      const theme      = saved || 'dark';                         // default = dark
+      document.documentElement.classList.remove('light', 'dark');
+      document.documentElement.classList.add(theme);
     })();
   </script>
-
-  {{/* ---------- скрипт переключателя темы ---------- */}}
-  {{ $js := resources.Get "js/theme-toggle.js" | minify | fingerprint }}
-  <script src="{{ $js.RelPermalink }}" defer></script>
 </head>
 
 <body>
   {{ partial "header.html" . }}
 
-  <main class="main">
-    {{ block "main" . }}{{ end }}
-  </main>
+  {{ block "main" . }}{{ end }}
 
   {{ partial "footer.html" . }}
+
+  <!-- переключатель подключаем один раз -->
+  <script src="{{ "js/theme-toggle.js" | relURL }}" defer></script>
 </body>
 </html>
-
-{{ $tooltipJS := resources.Get "js/tooltips.js" | minify | fingerprint }}
-<script src="{{ $tooltipJS.RelPermalink }}" defer></script>
