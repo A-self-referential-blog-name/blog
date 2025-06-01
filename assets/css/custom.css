@@ -70,10 +70,6 @@ html.dark details[open] > :not(summary) {
   pointer-events: auto;
 }
 
-.logo a {
+.logo {
   font-weight: 700;
-}
-
-.logo a {
-  font-weight: bold;
 }
