@@ -36,3 +36,8 @@ canonifyURLs = true
   # ShowToc = true
   TocOpen = false
   ShowLanguageSwitcher = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
