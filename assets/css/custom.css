@@ -33,30 +33,32 @@ html.dark details[open] > :not(summary) {
 
 .tooltip {
   position: relative;
-  cursor: help;
-  border-bottom: 1px dotted #aaa;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: underline dotted;
 }
 
-.tooltip .tooltiptext {
+.tooltiptext {
   visibility: hidden;
-  width: 220px;
+  opacity: 0;
+  width: 300px;
   background-color: #333;
   color: #fff;
   text-align: left;
-  padding: 5px 10px;
   border-radius: 6px;
-
+  padding: 0.5rem;
   position: absolute;
   z-index: 1;
-  bottom: 100%;
+  top: 1.2em;
   left: 0;
-  margin-bottom: 5px;
-
-  opacity: 0;
   transition: opacity 0.3s;
+  pointer-events: none;
 }
 
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltiptext,
+.tooltip:focus-within .tooltiptext,
+.tooltip.clicked .tooltiptext {
   visibility: visible;
   opacity: 1;
+  pointer-events: auto;
 }
