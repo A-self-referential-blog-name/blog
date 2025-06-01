@@ -13,12 +13,16 @@
     if (btn) btn.innerHTML = (theme === 'dark') ? icons.sun : icons.moon;
   }
 
-  function setTheme(theme) {
-    root.classList.remove('light', 'dark');
-    root.classList.add(theme);
-    localStorage.setItem(storageKey, theme);
-    setIcon(theme);
-  }
+function setTheme(theme) {
+  root.classList.remove('light', 'dark');
+  document.body.classList.remove('light', 'dark');   // ← НОВОЕ
+
+  root.classList.add(theme);
+  document.body.classList.add(theme);                // ← НОВОЕ
+
+  localStorage.setItem(storageKey, theme);
+  setIcon(theme);
+}
 
   /* начальная инициализация */
   setTheme(localStorage.getItem(storageKey) || 'dark');
@@ -47,3 +51,16 @@ document.addEventListener('click', (e) => {
 
 
 })();
+
+
+/* --- управление кликом по .tooltip ---------------------------------- */
+document.addEventListener('click', (e) => {
+  const tip = e.target.closest('.tooltip');
+
+  if (tip) {                                 // кликнули по самому слову
+    tip.classList.toggle('clicked');         // фиксируем / снимаем
+  } else {                                   // кликнули в свободное место
+    document.querySelectorAll('.tooltip.clicked')
+            .forEach(t => t.classList.remove('clicked'));
+  }
+});

@@ -12,18 +12,24 @@
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
 <!-- ---------- скрипт: ставим тему до отрисовки ---------- -->
+<!-- ---------- скрипт: ставим тему до отрисовки ---------- -->
 <script>
   (function () {
-    const key   = 'pref-theme';                  // тот же ключ, что в JS-тумблере
+    const key   = 'pref-theme';                  // тот же ключ, что в theme-toggle.js
     const theme = localStorage.getItem(key) || 'dark';
-    const root  = document.documentElement;
 
-    /* новая строка: всегда оставляем ровно ОДИН класс */
-    root.classList.remove('light', 'dark');      // ← ДОБАВИТЬ
+    /* гарантируем, что И <html>, И <body> держат ровно один класс */
+    const root = document.documentElement;
+    const body = document.body;
 
-    root.classList.add(theme);                   // было и остаётся
+    root.classList.remove('light', 'dark');
+    body.classList.remove('light', 'dark');
+
+    root.classList.add(theme);
+    body.classList.add(theme);
   })();
 </script>
+
 
 
 
