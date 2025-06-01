@@ -64,3 +64,10 @@ html.light a{
   color: inherit !important;
   opacity: 1 !important;
 }
+
+sup span[title] {
+  text-decoration: underline dotted;
+  cursor: help;
+  font-style: italic;
+  color: #888;
+}
