@@ -1,23 +1,26 @@
+<!-- layouts/partials/header.html -->
 <header class="header">
-  <nav class="nav" style="display:flex;align-items:center;padding:0 .75rem;width:100%;box-sizing:border-box;">
-    
-    <!-- ЛОГО -->
-    <div class="logo">
-      {{ $title := site.Title }}
-      <a href="{{ site.Home.RelPermalink }}" accesskey="h">{{ $title }}</a>
-    </div>
+  <nav class="nav"
+       style="display:flex;align-items:center;gap:.75rem;
+              padding:0 .75rem;width:100%;box-sizing:border-box;">
 
-    <div class="right">
-      <!-- МЕНЮ -->
-      <ul id="menu">
-        <!-- Home вручную -->
-        <li>
-          <a href="{{ site.Home.RelPermalink }}" accesskey="h">
-            <span {{ if eq .RelPermalink site.Home.RelPermalink }}class="active"{{ end }}>Home</span>
-          </a>
-        </li>
+    <!-- Логотип слева --------------------------------------------------- -->
+    {{ $title := site.Title }}
+    <a class="logo"  accesskey="h"
+       href="{{ site.Home.RelPermalink }}">{{ $title }}</a>
 
-        <!-- Остальные пункты меню -->
+    <!-- Блок справа (прижат к правому краю) ----------------------------- -->
+    <div class="right" style="margin-left:auto;display:flex;align-items:center;gap:1rem;">
+
+      <!-- 1. Кнопка Home (единственная) --------------------------------- -->
+      <a  href="{{ site.Home.RelPermalink }}" accesskey="h">
+        <span {{ if eq .RelPermalink site.Home.RelPermalink }}class="active"{{ end }}>
+          Home
+        </span>
+      </a>
+
+      <!-- 2. Остальные пункты меню -------------------------------------- -->
+      <ul id="menu" style="display:flex;gap:1rem;margin:0;list-style:none;padding:0;">
         {{ range site.Menus.main }}
           <li>
             <a href="{{ .URL | absLangURL }}">
@@ -29,14 +32,14 @@
         {{ end }}
       </ul>
 
-      <!-- ТУМБЛЕР -->
+      <!-- 3. Тумблер темы ------------------------------------------------ -->
       <button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
 
-      <!-- ЯЗЫКИ -->
+      <!-- 4. Смена языка ------------------------------------------------- -->
       <span class="lang-switch">
         {{ range $i, $lang := site.Languages }}
           {{ $code := $lang.Lang }}
-          {{ $tr := where $.Page.Translations "Lang" $code }}
+          {{ $tr   := where $.Page.Translations "Lang" $code }}
           {{ if eq $.Page.Lang $code }}
             <span class="current">{{ upper $code }}</span>
           {{ else if gt (len $tr) 0 }}

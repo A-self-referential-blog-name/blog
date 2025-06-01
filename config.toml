@@ -36,9 +36,3 @@ canonifyURLs = true
   # ShowToc = true
   TocOpen = false
   ShowLanguageSwitcher = true
-
-[menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
