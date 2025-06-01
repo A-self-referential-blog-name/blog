@@ -27,6 +27,7 @@ canonifyURLs = true
     languageCode = "uk"
 
 [params]
+showMeta = false
   env = "production"
   defaultTheme = "auto"
   # ShowReadingTime = true
