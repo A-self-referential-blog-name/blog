@@ -103,3 +103,26 @@ sup span[title] {
   opacity: 1;
   pointer-events: auto;
 }
+
+/* Убираем стрелку у summary */
+details summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Подчёркивание, курсор-рука, стиль как у ссылки */
+.custom-summary {
+  display: inline-block;
+  text-decoration: underline;
+  cursor: pointer;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+/* Необязательно: эффект при наведении */
+.custom-summary:hover {
+  opacity: 0.75;
+}
