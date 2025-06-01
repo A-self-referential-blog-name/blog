@@ -12,16 +12,13 @@
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
   {{/* ---------- скрипт: проставляем класс dark/light до отрисовки */}}
-  <script>
-    (function () {
-      try {
-        const theme = localStorage.getItem('pref-theme') || 'dark';  // тёмная по умолчанию
-        document.documentElement.classList.add(theme);
-      } catch (_) {
-        document.documentElement.classList.add('dark');
-      }
-    })();
-  </script>
+<script>
+  (function () {
+    const theme = localStorage.getItem('pref-theme') || 'dark';
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(theme);
+  })();
+</script>
 
   {{/* ---------- скрипт переключателя темы ---------- */}}
   {{ $js := resources.Get "js/theme-toggle.js" | minify | fingerprint }}
