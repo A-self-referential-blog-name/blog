@@ -1,162 +1,32 @@
-﻿/* ---------- Шапка ---------- */
-header .logo {
-  flex-shrink: 0;
-  padding-left: 1rem;
-  font-weight: 700;
-  font-size: 1.25rem;
-}
-header .nav {
-  padding-left: .75rem;
-  padding-right: .25rem;
-}
-header .right {
-  margin-left: auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-  padding-right: 0;
-}
-header #menu {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* ---------- Контраст шапки ---------- */
-html.light header a,
-html.light header span,
-html.light header svg {
-  color: #000 !important;
-  stroke: #000 !important;
-  opacity: 1 !important;
-}
-html.dark header a,
-html.dark header span,
-html.dark header svg {
-  color: #eee !important;
-  stroke: #eee !important;
-  opacity: 1 !important;
-}
-
-/* ---------- Фон и текст ---------- */
-html.dark body {
-  background: #121212;
-  color: #ddd;
-}
-html.light body {
-  background: #f5f5f5;
-  color: #000;
-}
-
-/* ---------- Заголовки / bold ---------- */
-html.light h1, html.light h2, html.light h3, html.light h4,
-html.light h5, html.light h6, html.light strong, html.light b {
-  color: #000;
-}
-html.dark h1, html.dark h2, html.dark h3, html.dark h4,
-html.dark h5, html.dark h6, html.dark strong, html.dark b {
-  color: #eee;
-}
-
-/* ---------- Отступ под шапкой ---------- */
-main.main {
-  margin-top: 4rem; /* ← было 2.5rem */
-}
-
-/* ───────── Контрастный текст в LIGHT-теме ───────── */
-html.light {
-  --theme:     #000;
-  --entry:     #000;
-  --secondary: #333;
-  --tertiary:  #666;
-}
-
-/* Убираем пониженную opacity у ссылок */
-html.light body,
-html.light .post-content,
-html.light a {
-  color: inherit !important;
-  opacity: 1 !important;
-}
-
-/* ---------- Всплывающие подсказки (сноски) ---------- */
-sup span[title] {
-  text-decoration: underline dotted;
-  cursor: help;
-  font-style: italic;
-  color: #888;
-}
-
-/* Альтернативные tooltip-сноски (если нужны) */
-.tooltip {
-  position: relative;
-  cursor: pointer;
-  color: inherit;
-  text-decoration: underline dotted;
-}
-.tooltiptext {
-  visibility: hidden;
-  opacity: 0;
-  width: 300px;
-  background-color: #333;
-  color: #fff;
-  text-align: left;
-  border-radius: 6px;
-  padding: 0.5rem;
-  position: absolute;
-  z-index: 1;
-  top: 1.2em;
-  left: 0;
-  transition: opacity 0.3s;
-  pointer-events: none;
-}
-.tooltip:hover .tooltiptext,
-.tooltip:focus-within .tooltiptext,
-.tooltip.clicked .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* ---------- <details> без стрелки и с подчёркиванием ---------- */
+﻿/* ---------- <details> без стрелки и с подчёркиванием только заголовка ---------- */
 details summary {
   list-style: none;
+  cursor: pointer;
+  display: inline-block;
+  color: inherit;
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+details summary:hover {
+  opacity: 0.75;
 }
 details summary::-webkit-details-marker {
   display: none;
 }
-.custom-summary {
-  display: inline-block;
-  text-decoration: underline;
-  cursor: pointer;
-  color: inherit;
-  transition: opacity 0.2s ease;
-}
-.custom-summary:hover {
-  opacity: 0.75;
-}
 
-/* ---------- Выделение открытого блока <details> ---------- */
-
-details.custom-summary[open] > *:not(summary) {
+/* ---------- Выделение раскрытого блока <details> (в обеих темах) ---------- */
+details[open] > :not(summary) {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 1rem;
   border-radius: 8px;
 }
 
-
-
-
-html.light details.custom-summary[open] > *:not(summary) {
+html.light details[open] > :not(summary) {
   background-color: #f0f0f0;
   color: #000;
 }
-html.dark details.custom-summary[open] > *:not(summary) {
+
+html.dark details[open] > :not(summary) {
   background-color: #222;
   color: #fff;
 }
-
