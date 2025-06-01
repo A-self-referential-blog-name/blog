@@ -23,5 +23,11 @@
   </main>
 
   {{ partial "footer.html" . }}
+
+
+
+{{/* theme-toggle.js */}}
+{{ $js := resources.Get "js/theme-toggle.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}"></script>
 </body>
 </html>

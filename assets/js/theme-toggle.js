@@ -26,9 +26,12 @@
   apply(current);
 
   /* 2. пользователь кликает по кнопке */
-  if (btn) {
-    btn.addEventListener('click', () => apply(current === 'dark' ? 'light' : 'dark'));
-  }
+ if (btn) {
+   btn.addEventListener('click', () => {
+     const next = body.classList.contains('dark') ? 'light' : 'dark';
+    apply(next);
+   });
+ }
 
   /* 3. если другая вкладка изменила localStorage — обновляем и здесь */
   window.addEventListener('storage', (e) => {
