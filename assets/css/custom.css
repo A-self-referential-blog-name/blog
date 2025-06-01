@@ -72,4 +72,5 @@ html.dark details[open] > :not(summary) {
 
 .logo {
   font-weight: 700;
+  font-size: 1.25rem; /* или 20px, если хочешь явно */
 }
