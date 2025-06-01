@@ -43,8 +43,8 @@ slug: "what-i-believe-in"
 
 Вот самое импонирующе поданное материалистическое описание "человеческой ситуации", что я встречал, взятое из книги Д. Хофштадтера "I am a strange loop" (наверное самая душевная книга, что я читал): 
 
-"In the end, we self-perceiving, self-inventing, locked-in mirages are little miracles of self-reference. We believe in marbles that disintegrate when we search for them but that are as real as any genuine marble when we’re not looking for them. Our very nature is such as to prevent us from fully understanding its very nature. Poised midway between the unvisualizable cosmic vastness of curved spacetime and the dubious, shadowy flickerings of charged quanta, we human beings, more like rainbows and mirages than like raindrops or boulders, are unpredictable self-writing poems — vague, metaphorical, ambiguous, and sometimes exceedingly beautiful.  
-To see ourselves this way is probably not as comforting as believing in ineffable other-worldly wisps endowed with eternal existence, but it has its compensations. What one gives up on is a childlike sense that things are exactly as they appear, and that our solid-seeming, marblelike “I” is the realest thing in the world; what one acquires is an appreciation of how tenuous we are at our cores, and how wildly different we are from what we seem to be."
+"*In the end, we self-perceiving, self-inventing, locked-in mirages are little miracles of self-reference. We believe in marbles that disintegrate when we search for them but that are as real as any genuine marble when we’re not looking for them. Our very nature is such as to prevent us from fully understanding its very nature. Poised midway between the unvisualizable cosmic vastness of curved spacetime and the dubious, shadowy flickerings of charged quanta, we human beings, more like rainbows and mirages than like raindrops or boulders, are unpredictable self-writing poems — vague, metaphorical, ambiguous, and sometimes exceedingly beautiful.  
+To see ourselves this way is probably not as comforting as believing in ineffable other-worldly wisps endowed with eternal existence, but it has its compensations. What one gives up on is a childlike sense that things are exactly as they appear, and that our solid-seeming, marblelike “I” is the realest thing in the world; what one acquires is an appreciation of how tenuous we are at our cores, and how wildly different we are from what we seem to be.*"
 
 Я не могу принять материализм, даже если он верен. 
 
@@ -158,8 +158,6 @@ P.S. Кажется странным, что пещера Платона --- м�
 "-- They’re lying to themselves. This is the truth of mankind.  
 -- Not lies, dreams. Their dreams kept them alive. But if you rob them of their dreams then –-- yes, this is the truth of mankind."  
 (Для меня тоже жить значит грезить.)
-
----
 
 </details>
 
