@@ -27,7 +27,7 @@ slug: "what-i-believe-in"
 
 ---
 
-Некоторые люди говорят, что они верят в бога. У меня нет никакой интуиции, что бог есть, поэтому для меня тут дилеммы нет. Но у меня есть интуиция, что я есть, или что у меня есть душа, или что я душа - и это противоречит фактам мира. Поэтому тут для меня "дилемма" есть. Я думаю, что когда другие люди говорят про веру в бога, они имеют в виду примерно то же, что имею в виду я, говоря про веру в душу. 
+Некоторые люди говорят, что они верят в бога. У меня нет никакой интуиции, что бог есть, поэтому для меня тут дилеммы нет. Но у меня есть интуиция, что я есть, или что у меня есть душа, или что я душа --- и это противоречит фактам мира. Поэтому тут для меня "дилемма" есть. Я думаю, что когда другие люди говорят про веру в бога, они имеют в виду примерно то же, что имею в виду я, говоря про веру в душу. 
 
 ---
 
@@ -35,14 +35,15 @@ slug: "what-i-believe-in"
 
 ---
 
-Камю начинает "Миф о Сизифе" с утверждения, что вопрос о том, нужно ли мне убить себя, предшествует любому другому философскому вопросу, и в качестве примеров таковых приводит следующие два: "сколько измерений в нашей вселенной?" и "сколькими категориями оперирует разум?". И я согласен, что вопрос о том, нужно ли мне убить себя, предшествует этим вопросам, только это не философские вопросы: первый относится к физике, второй - наверное, если переформулировать его в современной терминологии, на стыке психологии и философии, причем ближе к психологии, чем к философии. 
-Но вопросу о том, нужно ли мне убить себя, предшествует истинно философский вопрос "бессмысленна ли жизнь?" - ведь в случае, о котором идет речь в книге Камю, мы приходим к тому, что нужно убить себя, потому что уверены, что жизнь бессмысленна. Вопросу же "бессмысленна ли жизнь?" предшествует, как предварительный, более простой вопрос - о mind-body problem или "верен ли материализм?". Если материализм верен, то жизнь бессмысленна; если неверен, то не ясно. "Верен ли материализм?" - вот [истинно философский] вопрос, который предшествует вопросу о самоубийстве. 
+Камю начинает "Миф о Сизифе" с утверждения, что вопрос о том, нужно ли мне убить себя, предшествует любому другому философскому вопросу, и в качестве примеров таковых приводит следующие два: "сколько измерений в нашей вселенной?" и "сколькими категориями оперирует разум?". И я согласен, что вопрос о том, нужно ли мне убить себя, предшествует этим вопросам, только это не философские вопросы: первый относится к физике, второй --- наверное, если переформулировать его в современной терминологии, на стыке психологии и философии, причем ближе к психологии, чем к философии. 
+
+Но вопросу о том, нужно ли мне убить себя, предшествует истинно философский вопрос "бессмысленна ли жизнь?" - ведь в случае, о котором идет речь в книге Камю, мы приходим к тому, что нужно убить себя, потому что уверены, что жизнь бессмысленна. Вопросу же "бессмысленна ли жизнь?" предшествует, как предварительный, более простой вопрос --- о mind-body problem или "верен ли материализм?". Если материализм верен, то жизнь бессмысленна; если неверен, то не ясно. "Верен ли материализм?" --- вот [истинно философский] вопрос, который предшествует вопросу о самоубийстве. 
 
 ---
 
 Вот самое импонирующе поданное материалистическое описание "человеческой ситуации", что я встречал, взятое из книги Д. Хофштадтера "I am a strange loop" (наверное самая душевная книга, что я читал): 
 
-"In the end, we self-perceiving, self-inventing, locked-in mirages are little miracles of self-reference. We believe in marbles that disintegrate when we search for them but that are as real as any genuine marble when we’re not looking for them. Our very nature is such as to prevent us from fully understanding its very nature. Poised midway between the unvisualizable cosmic vastness of curved spacetime and the dubious, shadowy flickerings of charged quanta, we human beings, more like rainbows and mirages than like raindrops or boulders, are unpredictable self-writing poems — vague, metaphorical, ambiguous, and sometimes exceedingly beautiful.
+"In the end, we self-perceiving, self-inventing, locked-in mirages are little miracles of self-reference. We believe in marbles that disintegrate when we search for them but that are as real as any genuine marble when we’re not looking for them. Our very nature is such as to prevent us from fully understanding its very nature. Poised midway between the unvisualizable cosmic vastness of curved spacetime and the dubious, shadowy flickerings of charged quanta, we human beings, more like rainbows and mirages than like raindrops or boulders, are unpredictable self-writing poems — vague, metaphorical, ambiguous, and sometimes exceedingly beautiful.  
 To see ourselves this way is probably not as comforting as believing in ineffable other-worldly wisps endowed with eternal existence, but it has its compensations. What one gives up on is a childlike sense that things are exactly as they appear, and that our solid-seeming, marblelike “I” is the realest thing in the world; what one acquires is an appreciation of how tenuous we are at our cores, and how wildly different we are from what we seem to be."
 
 Но я не могу принять материализм, даже если он верен. 
