@@ -6,6 +6,7 @@ canonifyURLs = true
 
 [languages]
   [languages.en]
+  showMeta = false
     languageName = "English"
     weight = 1
     title = "Self-referential blog name"
@@ -13,6 +14,7 @@ canonifyURLs = true
     languageCode = "en-us"
 
   [languages.ru]
+  showMeta = false
     languageName = "Русский"
     weight = 2
     title = "Название блога с самореференцией"
@@ -20,6 +22,7 @@ canonifyURLs = true
     languageCode = "ru"
 
   [languages.uk]
+  showMeta = false
     languageName = "Українська"
     weight = 3
     title = "Самореферентна назва блогу"
@@ -27,7 +30,6 @@ canonifyURLs = true
     languageCode = "uk"
 
 [params]
-showMeta = false
   env = "production"
   defaultTheme = "auto"
   # ShowReadingTime = true
