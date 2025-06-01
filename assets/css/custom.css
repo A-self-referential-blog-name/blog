@@ -1,70 +1,89 @@
 ﻿/* ---------- Шапка ---------- */
-header .logo{
-  flex-shrink:0;
-  padding-left:1rem;
-  font-weight:700;
-  font-size:1.25rem;
+header .logo {
+  flex-shrink: 0;
+  padding-left: 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
 }
-header .nav{ padding-left:.75rem; padding-right:.25rem; }
-header .right{
-  margin-left:auto;
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-  gap:1rem;
-  padding-right:0;
+header .nav {
+  padding-left: .75rem;
+  padding-right: .25rem;
 }
-header #menu{
-  display:flex;
-  flex-direction:row;
-  gap:1rem;
-  list-style:none;
-  margin:0;
-  padding:0;
+header .right {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 0;
+}
+header #menu {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* ---------- контраст шапки ---------- */
+/* ---------- Контраст шапки ---------- */
 html.light header a,
 html.light header span,
-html.light header svg{ color:#000!important; stroke:#000!important; opacity:1!important; }
-html.dark  header a,
-html.dark  header span,
-html.dark  header svg{ color:#eee!important; stroke:#eee!important; opacity:1!important; }
-
-/* ---------- фон и текст ---------- */
-html.dark  body{ background:#121212; color:#ddd; }
-html.light body{ background:#f5f5f5; color:#000; }
-
-/* ---------- заголовки / bold ---------- */
-html.light h1,html.light h2,html.light h3,html.light h4,
-html.light h5,html.light h6,html.light strong,html.light b{ color:#000; }
-html.dark  h1,html.dark  h2,html.dark  h3,html.dark  h4,
-html.dark  h5,html.dark  h6,html.dark  strong,html.dark  b{ color:#eee; }
-
-/* ---------- отступ под шапкой (колонки ниже) ---------- */
-main.main{ margin-top:4rem; }   /* ← было 2.5rem */
-
-/* (остальные стили, если появятся, добавляй ниже) */
-
-/* ───────── Контрастный текст в LIGHT-теме ───────── */
-
-/* 1. Основные CSS-переменные PaperMod */
-html.light{
-  --theme:     #000;   /* цвет h1–h6 */
-  --entry:     #000;   /* основной текст внутри статьи */
-  --secondary: #333;   /* даты, подписи к картинкам и т.д. */
-  --tertiary:  #666;   /* ещё более второстепенные элементы */
+html.light header svg {
+  color: #000 !important;
+  stroke: #000 !important;
+  opacity: 1 !important;
+}
+html.dark header a,
+html.dark header span,
+html.dark header svg {
+  color: #eee !important;
+  stroke: #eee !important;
+  opacity: 1 !important;
 }
 
-/* 2. Подавляем пониженную opacity, которую тема ставит
-      ссылкам/заголовкам в светлом режиме */
+/* ---------- Фон и текст ---------- */
+html.dark body {
+  background: #121212;
+  color: #ddd;
+}
+html.light body {
+  background: #f5f5f5;
+  color: #000;
+}
+
+/* ---------- Заголовки / bold ---------- */
+html.light h1, html.light h2, html.light h3, html.light h4,
+html.light h5, html.light h6, html.light strong, html.light b {
+  color: #000;
+}
+html.dark h1, html.dark h2, html.dark h3, html.dark h4,
+html.dark h5, html.dark h6, html.dark strong, html.dark b {
+  color: #eee;
+}
+
+/* ---------- Отступ под шапкой ---------- */
+main.main {
+  margin-top: 4rem; /* ← было 2.5rem */
+}
+
+/* ───────── Контрастный текст в LIGHT-теме ───────── */
+html.light {
+  --theme:     #000;
+  --entry:     #000;
+  --secondary: #333;
+  --tertiary:  #666;
+}
+
+/* Убираем пониженную opacity у ссылок */
 html.light body,
 html.light .post-content,
-html.light a{
+html.light a {
   color: inherit !important;
   opacity: 1 !important;
 }
 
+/* ---------- Всплывающие подсказки (сноски) ---------- */
 sup span[title] {
   text-decoration: underline dotted;
   cursor: help;
@@ -72,13 +91,13 @@ sup span[title] {
   color: #888;
 }
 
+/* Альтернативные tooltip-сноски (если нужны) */
 .tooltip {
   position: relative;
   cursor: pointer;
   color: inherit;
   text-decoration: underline dotted;
 }
-
 .tooltiptext {
   visibility: hidden;
   opacity: 0;
@@ -95,7 +114,6 @@ sup span[title] {
   transition: opacity 0.3s;
   pointer-events: none;
 }
-
 .tooltip:hover .tooltiptext,
 .tooltip:focus-within .tooltiptext,
 .tooltip.clicked .tooltiptext {
@@ -104,16 +122,13 @@ sup span[title] {
   pointer-events: auto;
 }
 
-/* Убираем стрелку у summary */
+/* ---------- <details> без стрелки и с подчёркиванием ---------- */
 details summary {
   list-style: none;
 }
-
 details summary::-webkit-details-marker {
   display: none;
 }
-
-/* Подчёркивание, курсор-рука, стиль как у ссылки */
 .custom-summary {
   display: inline-block;
   text-decoration: underline;
@@ -121,8 +136,21 @@ details summary::-webkit-details-marker {
   color: inherit;
   transition: opacity 0.2s ease;
 }
-
-/* Необязательно: эффект при наведении */
 .custom-summary:hover {
   opacity: 0.75;
+}
+
+/* ---------- Выделение открытого блока <details> ---------- */
+details.custom-summary[open] {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+}
+html.light details.custom-summary[open] {
+  background-color: #f0f0f0;
+  color: #000;
+}
+html.dark details.custom-summary[open] {
+  background-color: #222;
+  color: #fff;
 }
