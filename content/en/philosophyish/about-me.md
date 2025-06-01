@@ -1,6 +1,6 @@
 ﻿---
 title: "About Me"
-date: 2025-05-30
+weight: 1
 slug: "about-me"
 ---
 

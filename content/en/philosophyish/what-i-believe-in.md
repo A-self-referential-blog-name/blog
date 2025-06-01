@@ -1,6 +1,6 @@
 ---
 title: "What I believe in"
-date: 2025-06-01
+weight: 2
 slug: "what-i-believe-in"
 ---
 

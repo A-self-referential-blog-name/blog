@@ -1,6 +1,6 @@
 ---
 title: "У що я вірю"
-date: 2025-06-01
+weight: 2
 slug: "what-i-believe-in"
 ---
 
