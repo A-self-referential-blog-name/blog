@@ -5,29 +5,35 @@ theme = 'PaperMod'
 canonifyURLs = true
 
 [languages]
-  [languages.en]
-  showMeta = false
-    languageName = "English"
-    weight = 1
-    title = "Self-referential blog name"
-    contentDir = "content/en"
-    languageCode = "en-us"
+[languages.en]
+  languageName = "English"
+  weight = 1
+  title = "Self-referential blog name"
+  contentDir = "content/en"
+  languageCode = "en-us"
 
-  [languages.ru]
-  showMeta = false
-    languageName = "Русский"
-    weight = 2
-    title = "Название блога с самореференцией"
-    contentDir = "content/ru"
-    languageCode = "ru"
+  [languages.en.params]
+    showMeta = false
 
-  [languages.uk]
-  showMeta = false
-    languageName = "Українська"
-    weight = 3
-    title = "Самореферентна назва блогу"
-    contentDir = "content/uk"
-    languageCode = "uk"
+[languages.ru]
+  languageName = "Русский"
+  weight = 2
+  title = "Название блога с самореференцией"
+  contentDir = "content/ru"
+  languageCode = "ru"
+
+  [languages.ru.params]
+    showMeta = false
+
+[languages.uk]
+  languageName = "Українська"
+  weight = 3
+  title = "Самореферентна назва блогу"
+  contentDir = "content/uk"
+  languageCode = "uk"
+
+  [languages.uk.params]
+    showMeta = false
 
 [params]
   env = "production"
