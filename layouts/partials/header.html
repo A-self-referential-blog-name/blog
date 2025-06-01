@@ -1,19 +1,31 @@
 <header class="header">
   <nav class="nav" style="display:flex;align-items:center;padding:0 .75rem;width:100%;box-sizing:border-box;">
-    <!-- ЛОГО --><div class="logo">
+    
+    <!-- ЛОГО -->
+    <div class="logo">
       {{ $title := site.Title }}
-      <a href="{{ site.Home.RelPermalink }}" accesskey="h">
-  {{ $title }}
-</a>
+      <a href="{{ site.Home.RelPermalink }}" accesskey="h">{{ $title }}</a>
     </div>
 
     <div class="right">
       <!-- МЕНЮ -->
       <ul id="menu">
+        <!-- Home вручную -->
+        <li>
+          <a href="{{ site.Home.RelPermalink }}" accesskey="h">
+            <span {{ if eq .RelPermalink site.Home.RelPermalink }}class="active"{{ end }}>Home</span>
+          </a>
+        </li>
+
+        <!-- Остальные пункты меню -->
         {{ range site.Menus.main }}
-          <li><a href="{{ .URL | absLangURL }}">
-            <span {{ if eq (.URL | absLangURL) ($.Permalink | absLangURL) }}class="active"{{ end }}>{{ .Name }}</span>
-          </a></li>
+          <li>
+            <a href="{{ .URL | absLangURL }}">
+              <span {{ if eq (.URL | absLangURL) ($.Permalink | absLangURL) }}class="active"{{ end }}>
+                {{ .Name }}
+              </span>
+            </a>
+          </li>
         {{ end }}
       </ul>
 
@@ -25,7 +37,6 @@
         {{ range $i, $lang := site.Languages }}
           {{ $code := $lang.Lang }}
           {{ $tr := where $.Page.Translations "Lang" $code }}
-          {{/* вывод */}}
           {{ if eq $.Page.Lang $code }}
             <span class="current">{{ upper $code }}</span>
           {{ else if gt (len $tr) 0 }}
