@@ -132,18 +132,22 @@ P.S. Кажется странным, что пещера Платона --- м�
 <details>
   <summary>7 из них</summary>
 
-- Вот "собранная" (нечестная) цитата Джарона Ланье:
+Вот "собранная" (нечестная) цитата Джарона Ланье:
 
 "Sometimes I think of it as being like a tightrope walker, where if you fall to the left, you succumb to superstitions, and if you fall to the right, you succumb to unjustified reductionism. I think the art of this is to be a dualist because it's honest, but to be an honest dualist, which means saying almost nothing at all. You've got two choices. Either you know everything, or you organize your ignorance in some intelligent and honest manner. Dualism is the most honest manner of organizing your ignorance." 
 
-- "Сознательный реализм" Дональда Хоффмана показался мне очень конструктивным (хоть и совершенно невероятным):
+---
+
+"Сознательный реализм" Дональда Хоффмана показался мне очень конструктивным (хоть и совершенно невероятным):
 
 "We can start with a mathematically precise theory of conscious agents and their interactions. We can, according to the norms of methodological naturalism, devise and test theories of how conscious agents construct physical objects and their properties, even space and time themselves. In the process we need relinquish no method or result of physicalist science, but instead we aim to exhibit each such result as a special case in a more comprehensive, conscious realist, framework."
 
 Он предлагает модель реальности, фундаментальные элементы которой --- это сознательные агенты и связи между ними; физический мир --- иллюзия, возникающая в ходе взаимодействия сознательных агентов, или вроде того. Он предлагает построить математическую теорию, которая, начав с сети сознательных агентов, выведет всю современную науку. Если это получится, то это будет очень сильным аргументом против материализма, просто потому что это будет лучшая модель реальности. Осталось только вывести всю современную науку.  
 (Я пока не понял, подразумевает ли модель реальности "сознательный реализм" существование "я"/"свободы воли"/"смысла жизни", и если да, то в каком смысле, но если она как альтернатива материализму возможна, то материализм не неоспорим. Этого бы нам, для начала, хватило.)
 
-- Вот "собранная" (нечестная) цитата Ли Смолина (физик, который верит, что время реально): 
+---
+
+Вот "собранная" (нечестная) цитата Ли Смолина (физик, который верит, что время реально): 
 
 "Perhaps the laws of nature come first, and time is something which emerges - like heat, like light, like so many things which are not really fundamental, that have to do with our experiences as large animals in the world. Or maybe time is the most fundamental thing, and law emerges from time. In this viewpoint, time is real, and the flow of time is the truest thing we know; everything else emerges in time, including law, which means that the future is open and novelty is real."
 
