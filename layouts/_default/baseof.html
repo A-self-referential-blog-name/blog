@@ -11,16 +11,20 @@
   {{ $css := resources.Get "css/custom.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
-<!-- ---------- скрипт: проставляем класс dark/light до отрисовки ---------- -->
+<!-- ---------- скрипт: ставим тему до отрисовки ---------- -->
 <script>
   (function () {
-    const key   = 'pref-theme';                       // тот же ключ, что в theme-toggle.js
-    const theme = localStorage.getItem(key) || 'dark';// default = dark
+    const key   = 'pref-theme';                  // тот же ключ, что в JS-тумблере
+    const theme = localStorage.getItem(key) || 'dark';
     const root  = document.documentElement;
-    root.classList.remove('light','dark');            // <─ ДОБАВЛЕНО
-    root.classList.add(theme);                        // <─ как и было
+
+    /* новая строка: всегда оставляем ровно ОДИН класс */
+    root.classList.remove('light', 'dark');      // ← ДОБАВИТЬ
+
+    root.classList.add(theme);                   // было и остаётся
   })();
 </script>
+
 
 
   {{/* ---------- скрипт переключателя темы ---------- */}}
