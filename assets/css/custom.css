@@ -71,3 +71,35 @@ sup span[title] {
   font-style: italic;
   color: #888;
 }
+
+.tooltip {
+  position: relative;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: underline dotted;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  width: 300px;
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  top: 1.2em;
+  left: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.tooltip:hover .tooltiptext,
+.tooltip:focus-within .tooltiptext,
+.tooltip.clicked .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}

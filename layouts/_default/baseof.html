@@ -38,3 +38,6 @@
   {{ partial "footer.html" . }}
 </body>
 </html>
+
+{{ $tooltipJS := resources.Get "js/tooltips.js" | minify | fingerprint }}
+<script src="{{ $tooltipJS.RelPermalink }}" defer></script>
