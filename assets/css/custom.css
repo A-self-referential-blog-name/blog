@@ -141,16 +141,22 @@ details summary::-webkit-details-marker {
 }
 
 /* ---------- Выделение открытого блока <details> ---------- */
-details.custom-summary[open] {
+
+details.custom-summary[open] > *:not(summary) {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 1rem;
   border-radius: 8px;
 }
-html.light details.custom-summary[open] {
+
+
+
+
+html.light details.custom-summary[open] > *:not(summary) {
   background-color: #f0f0f0;
   color: #000;
 }
-html.dark details.custom-summary[open] {
+html.dark details.custom-summary[open] > *:not(summary) {
   background-color: #222;
   color: #fff;
 }
+
