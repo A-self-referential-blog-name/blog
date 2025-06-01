@@ -69,3 +69,7 @@ html.dark details[open] > :not(summary) {
   opacity: 1;
   pointer-events: auto;
 }
+
+.logo a {
+  font-weight: 700;
+}
