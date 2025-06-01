@@ -1,6 +1,6 @@
 /*  static/js/theme-toggle.js  */
 (() => {
-  const KEY   = 'theme';               // тот же ключ, что использует PaperMod
+  const KEY   = 'pref-theme';               // тот же ключ, что использует PaperMod
   const root  = document.documentElement;
   const body  = document.body;
   const btn   = document.getElementById('theme-toggle');
@@ -34,8 +34,8 @@
  }
 
   /* 3. если другая вкладка изменила localStorage — обновляем и здесь */
-  window.addEventListener('storage', (e) => {
-    if (e.key === KEY) apply(e.newValue || 'dark');
+window.addEventListener('storage', (e) => {
+   if (e.key === KEY) apply(e.newValue || 'dark');
   });
 
   /* --- «залипающие» tooltip-сноски ------------------------------- */
