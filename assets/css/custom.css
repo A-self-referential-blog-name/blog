@@ -62,3 +62,10 @@ html.dark details[open] > :not(summary) {
   opacity: 1;
   pointer-events: auto;
 }
+
+/* фикс: показывать tooltip, когда класс .clicked */
+.tooltip.clicked .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
