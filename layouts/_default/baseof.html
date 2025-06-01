@@ -1,39 +1,16 @@
 {{/* ------------------------------------------------------------------
      layouts/_default/baseof.html
-     (полный файл, вставить без изменений)
 ------------------------------------------------------------------ */}}
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
 <head>
   {{ partial "head.html" . }}            {{/* базовый <head> от PaperMod */}}
 
-  {{/* ---------- наши пользовательские стили ---------- */}}
+  {{/* ---------- ваши пользовательские стили ---------- */}}
   {{ $css := resources.Get "css/custom.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
-<!-- ---------- скрипт: ставим тему до отрисовки ---------- -->
-<!-- ---------- скрипт: ставим тему до отрисовки ---------- -->
-<script>
-  (function () {
-    const key   = 'pref-theme';                  // тот же ключ, что в theme-toggle.js
-    const theme = localStorage.getItem(key) || 'dark';
-
-    /* гарантируем, что И <html>, И <body> держат ровно один класс */
-    const root = document.documentElement;
-    const body = document.body;
-
-    root.classList.remove('light', 'dark');
-    body.classList.remove('light', 'dark');
-
-    root.classList.add(theme);
-    body.classList.add(theme);
-  })();
-</script>
-
-
-
-
-  {{/* ---------- скрипт переключателя темы ---------- */}}
+  {{/* ---------- наш единый скрипт темы + tooltip ---------- */}}
   {{ $js := resources.Get "js/theme-toggle.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>
 </head>
@@ -46,49 +23,5 @@
   </main>
 
   {{ partial "footer.html" . }}
-
-
-
-
-
-<!-- держим body и html в одной теме + залипающие tooltip-сноски -->
-<script>
-(function () {
-  /* ---------- синхронизация темы ----------------------------------- */
-  const root  = document.documentElement;
-  const sync  = () => {
-    const isDark = root.classList.contains('dark');
-    document.body.classList.remove('light', 'dark');
-    document.body.classList.add(isDark ? 'dark' : 'light');
-  };
-  /* первый раз — когда страница уже загружена */
-  window.addEventListener('DOMContentLoaded', sync);
-  /* если тема поменялась через кнопку — MutationObserver ловит изменение <html> */
-  new MutationObserver(sync).observe(root, { attributes:true, attributeFilter:['class'] });
-
-  /* ---------- «залипающие» tooltip-сноски --------------------------- */
-  document.addEventListener('click', (e) => {
-    const tip = e.target.closest('.tooltip');
-    if (tip) {                       // клик по самому слову
-      tip.classList.toggle('clicked');
-    } else {                         // клик мимо — скрыть все открытые
-      document.querySelectorAll('.tooltip.clicked')
-              .forEach(t => t.classList.remove('clicked'));
-    }
-  });
-})();
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
