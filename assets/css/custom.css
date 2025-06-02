@@ -153,6 +153,6 @@ html.dark details[open] > :not(summary) {
 
 
 
-html.dark body {
+html.dark .main {
   color: #f2f2f2;
 }
