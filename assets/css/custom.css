@@ -134,4 +134,9 @@ html.dark details[open] > :not(summary) {
   }
 }
 
+@media (max-width: 768px) {
+  .column {
+    margin-bottom: 3rem; /* увеличенный отступ между "колонками" */
+  }
+}
 
