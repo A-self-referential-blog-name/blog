@@ -40,9 +40,7 @@
   {{ $css := resources.Get "css/custom.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
-  {{/* ---------- наш единый скрипт темы + tooltip ---------- */}}
-  {{ $js := resources.Get "js/theme-toggle.js" | minify | fingerprint }}
-  <script src="{{ $js.RelPermalink }}" defer></script>
+<script src="/js/theme-toggle.js" defer></script>
 </head>
 
 <body>
