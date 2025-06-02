@@ -88,7 +88,7 @@ html.dark details[open] > :not(summary) {
   .columns-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 3rem; /* увеличенный отступ между колонками */
+    gap: 5rem; /* 🔺 БОЛЬШОЙ отступ между колонками */
     align-items: flex-start;
     margin-left: 0 !important;
     padding-left: 1rem !important;
@@ -102,7 +102,8 @@ html.dark details[open] > :not(summary) {
   .column h3 {
     text-align: left !important;
     font-size: 1.15rem;
-    white-space: normal; /* разрешить перенос */
+    white-space: normal;
+    margin-bottom: 1rem;
   }
 
   .logo {
@@ -132,4 +133,5 @@ html.dark details[open] > :not(summary) {
     font-size: 1.1rem;
   }
 }
+
 
