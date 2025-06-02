@@ -98,3 +98,36 @@ html.dark details[open] > :not(summary) {
     white-space: normal;
   }
 }
+
+
+
+
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.1rem;
+    padding-left: 0.5rem;
+  }
+
+  .header nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .header .right {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  .main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.1rem;
+  }
+}
