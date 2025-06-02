@@ -77,12 +77,18 @@ html.dark details[open] > :not(summary) {
 
 
 
-/* ---------- Адаптация колонок под мобильные ---------- */
+
+
+
+
+
+
+/* ---------- Адаптация под мобильные устройства ---------- */
 @media (max-width: 768px) {
   .columns-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem; /* увеличенный отступ между колонками */
     align-items: flex-start;
     margin-left: 0 !important;
     padding-left: 1rem !important;
@@ -95,15 +101,10 @@ html.dark details[open] > :not(summary) {
 
   .column h3 {
     text-align: left !important;
-    white-space: normal;
+    font-size: 1.15rem;
+    white-space: normal; /* разрешить перенос */
   }
-}
 
-
-
-
-
-@media (max-width: 768px) {
   .logo {
     font-size: 1.1rem;
     padding-left: 0.5rem;
@@ -131,3 +132,4 @@ html.dark details[open] > :not(summary) {
     font-size: 1.1rem;
   }
 }
+
