@@ -140,3 +140,13 @@ html.dark details[open] > :not(summary) {
   }
 }
 
+/* ---------- Отступ между шапкой и колонками (на всех экранах) ---------- */
+.columns-wrapper {
+  margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+  .columns-wrapper {
+    margin-top: 2.5rem;
+  }
+}
