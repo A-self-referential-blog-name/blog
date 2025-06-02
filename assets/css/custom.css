@@ -156,3 +156,9 @@ html.dark details[open] > :not(summary) {
 html.dark .main {
   color: #f5f5f5;
 }
+
+
+html.light .column a {
+  color: #111; /* почти чёрный */
+  font-weight: 500; /* немного жирнее, можно убрать если не нужно */
+}
