@@ -150,3 +150,9 @@ html.dark details[open] > :not(summary) {
     margin-top: 2.5rem;
   }
 }
+
+
+
+html.dark body {
+  color: #f2f2f2;
+}
