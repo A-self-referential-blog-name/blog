@@ -4,6 +4,36 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
 <head>
+
+
+
+
+
+
+
+
+
+<script>
+  (function () {
+    const key = 'pref-theme';
+    const theme = localStorage.getItem(key) || 'light'; // по умолчанию — светлая тема
+    const root = document.documentElement;
+    root.classList.remove('light', 'dark');
+    root.classList.add(theme);
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
   {{ partial "head.html" . }}            {{/* базовый <head> от PaperMod */}}
 
   {{/* ---------- ваши пользовательские стили ---------- */}}
@@ -24,11 +54,6 @@
 
   {{ partial "footer.html" . }}
 
-
-
-{{/* theme-toggle.js */}}
-{{ $js := resources.Get "js/theme-toggle.js" | minify | fingerprint }}
-<script src="{{ $js.RelPermalink }}"></script>
 
 
 
