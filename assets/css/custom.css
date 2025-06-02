@@ -161,3 +161,14 @@ html.dark .main {
 html.light .column a {
   color: #111; /* почти чёрный */
 }
+
+
+
+html.light {
+  background-color: #f4f4f4; /* немного серее белого */
+  color: #111; /* почти чёрный текст */
+}
+
+html.light .main {
+  color: #111;
+}
