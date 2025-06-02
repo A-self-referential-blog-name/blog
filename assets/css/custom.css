@@ -164,11 +164,10 @@ html.light .column a {
 
 
 
-html.light {
-  background-color: #f4f4f4; /* немного серее белого */
-  color: #111; /* почти чёрный текст */
+html.light,
+html.light body,
+html.light .main {
+  background-color: #f4f4f4 !important;  /* немного серее белого */
+  color: #111 !important;                /* почти чёрный текст */
 }
 
-html.light .main {
-  color: #111;
-}
