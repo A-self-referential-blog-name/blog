@@ -160,5 +160,4 @@ html.dark .main {
 
 html.light .column a {
   color: #111; /* почти чёрный */
-  font-weight: 500; /* немного жирнее, можно убрать если не нужно */
 }
