@@ -77,32 +77,24 @@ html.dark details[open] > :not(summary) {
 
 
 
-/* --- Адаптивность колонок --- */
+/* ---------- Адаптация колонок под мобильные ---------- */
 @media (max-width: 768px) {
-  .main .columns {
+  .columns-wrapper {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     align-items: flex-start;
+    margin-left: 0 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 
-  .main .column {
+  .column {
     width: 100% !important;
   }
 
-  .header nav {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0.5rem;
-  }
-
-  .header .right {
-    width: 100%;
-    justify-content: flex-end;
-  }
-
-  .logo {
-    font-size: 1.1rem;
-    padding-left: 0;
+  .column h3 {
+    text-align: left !important;
+    white-space: normal;
   }
 }
