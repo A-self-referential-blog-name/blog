@@ -19,15 +19,21 @@
       {{ end }}
     </ul>
 
-    <!-- Наш сворачиваемый блок -->
+    <!-- Сворачиваемый блок: Тексты 2015–2020 -->
     <details class="folder">
       <summary class="folder-summary">
         {{ if eq $lang "en" }}Texts 2015–2020{{ else if eq $lang "uk" }}Тексти 2015–2020{{ else }}Тексты 2015–2020{{ end }}
       </summary>
       <ul class="sublist">
-        <li><em>
-          {{ if eq $lang "en" }}(texts will be added later){{ else if eq $lang "uk" }}(тексти буде додано пізніше){{ else }}(тексты будут добавлены позже){{ end }}
-        </em></li>
+        {{- $start := time "2015-01-01" -}}
+        {{- $end   := time "2020-12-31" -}}
+        {{- $pages := where (where site.RegularPages "Lang" $lang) "Section" "==" "texts" -}}
+        {{- $pages = where (where $pages "Date" "ge" $start) "Date" "le" $end -}}
+        {{- range first 10 ($pages.ByDate.Reverse) -}}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{- else -}}
+          <li><em>{{ if eq $lang "en" }}(no texts yet){{ else if eq $lang "uk" }}(поки немає текстів){{ else }}(пока нет текстов){{ end }}</em></li>
+        {{- end -}}
       </ul>
     </details>
   </div>
