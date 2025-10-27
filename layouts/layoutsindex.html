@@ -1,0 +1,75 @@
+{{ define "main" }}
+<main class="three-cols container">
+
+  <!-- Левая колонка -->
+  <section class="col col-left">
+    <h2 class="col-title">{{ i18n "left_col_title" | default "Околофилософское" }}</h2>
+
+    <ul class="flat-list">
+      {{/* Ссылка на "Обо мне" в текущем языке */}}
+      {{ with site.GetPage (printf "/%s/%s" .Site.Language.Lang "about") }}
+        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle | default .Title | default (i18n "about" | default "Обо мне") }}</a></li>
+      {{ end }}
+
+      {{/* Ссылка на "Во что я верю" в текущем языке */}}
+      {{ with site.GetPage (printf "/%s/%s" .Site.Language.Lang "what-i-believe-in") }}
+        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle | default .Title | default (i18n "what_i_believe_in" | default "Во что я верю") }}</a></li>
+      {{ end }}
+    </ul>
+
+    <!-- РАСКРЫВАЮЩАЯСЯ ПАПКА: Тексты 2015–2020 -->
+    <details class="folder" open>
+      <summary class="folder-summary">
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 10l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>{{ i18n "texts_2015_2020" | default "Тексты 2015–2020" }}</span>
+      </summary>
+
+      <ul class="sublist">
+        {{- $start := time "2015-01-01" -}}
+        {{- $end   := time "2020-12-31" -}}
+        {{- $p := where (where .Site.RegularPages "Lang" .Site.Language.Lang) "Date" "ge" $start -}}
+        {{- $p = where $p "Date" "le" $end -}}
+        {{- /* если тексты в своей секции, раскомментируй и подставь имя секции:
+              $p = where $p "Section" "texts"
+            */ -}}
+        {{- $p = $p.ByDate.Reverse -}}
+        {{- range first 10 $p -}}
+          <li class="subitem">
+            <a class="subitem-link" href="{{ .RelPermalink }}">
+              <span class="dot-bullet" aria-hidden="true"></span>
+              <span class="subitem-title">{{ .Title }}</span>
+              <time class="subitem-date" datetime="{{ .Date }}">{{ .Date.Format "2006" }}</time>
+            </a>
+          </li>
+        {{- else -}}
+          <li class="subitem subitem-empty">{{ i18n "no_items_in_range" | default "Нет материалов за 2015–2020" }}</li>
+        {{- end -}}
+      </ul>
+    </details>
+  </section>
+
+  <!-- Центральная колонка -->
+  <section class="col col-center">
+    <h2 class="col-title">{{ i18n "center_col_title" | default "Разное" }}</h2>
+    {{ $any := first 1 (where .Site.RegularPages "Lang" .Site.Language.Lang) }}
+    {{ if not $any }}
+      <p class="muted">No posts</p>
+    {{ else }}
+      <ul class="flat-list">
+        {{ range first 8 (where .Site.RegularPages "Lang" .Site.Language.Lang).ByLastmod.Reverse }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </section>
+
+  <!-- Правая колонка -->
+  <section class="col col-right">
+    <h2 class="col-title">{{ i18n "right_col_title" | default "Фикшен" }}</h2>
+    <p class="muted">No posts</p>
+  </section>
+
+</main>
+{{ end }}
