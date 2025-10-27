@@ -1,37 +1,16 @@
 ﻿{{ $lang := .Page.Lang }}
 <style>
-  .columns-wrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 2vw;
-  }
-  .column {
-    flex: 1;
-    min-width: 200px;
-  }
-  .column h3 {
-    text-align: center;
-    margin-bottom: 1rem;
-    white-space: nowrap;
-  }
-  .column ul {
-    list-style: none;
-    padding: 0;
-  }
-  .column ul li {
-    margin-bottom: 0.5rem;
-  }
-  .column ul li a {
-    text-decoration: none;
-    color: inherit;
-  }
+  .columns-wrapper { display:flex; justify-content:space-between; gap:2vw; }
+  .column { flex:1; min-width:200px; }
+  .column h3 { text-align:center; margin-bottom:1rem; white-space:nowrap; }
+  .column ul { list-style:none; padding:0; }
+  .column ul li { margin-bottom:0.5rem; }
+  .column ul li a { text-decoration:none; color:inherit; }
 </style>
 
 <div class="columns-wrapper">
   <div class="column">
-    <h3>
-      {{ if eq $lang "en" }}Near-philosophical{{ else if eq $lang "uk" }}Навколофілософське{{ else }}Околофилософское{{ end }}
-    </h3>
+    <h3>{{ if eq $lang "en" }}Near-philosophical{{ else if eq $lang "uk" }}Навколофілософське{{ else }}Околофилософское{{ end }}</h3>
     <ul>
       {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "philosophyish" }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
@@ -39,11 +18,22 @@
         <li>No posts</li>
       {{ end }}
     </ul>
+
+    <!-- Наш сворачиваемый блок -->
+    <details class="folder">
+      <summary class="folder-summary">
+        {{ if eq $lang "en" }}Texts 2015–2020{{ else if eq $lang "uk" }}Тексти 2015–2020{{ else }}Тексты 2015–2020{{ end }}
+      </summary>
+      <ul class="sublist">
+        <li><em>
+          {{ if eq $lang "en" }}(texts will be added later){{ else if eq $lang "uk" }}(тексти буде додано пізніше){{ else }}(тексты будут добавлены позже){{ end }}
+        </em></li>
+      </ul>
+    </details>
   </div>
+
   <div class="column">
-    <h3>
-      {{ if eq $lang "en" }}Other{{ else if eq $lang "uk" }}Різне{{ else }}Разное{{ end }}
-    </h3>
+    <h3>{{ if eq $lang "en" }}Other{{ else if eq $lang "uk" }}Різне{{ else }}Разное{{ end }}</h3>
     <ul>
       {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "misc" }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
@@ -52,10 +42,9 @@
       {{ end }}
     </ul>
   </div>
+
   <div class="column">
-    <h3>
-      {{ if eq $lang "en" }}Fiction{{ else if eq $lang "uk" }}Фікшен{{ else }}Фикшен{{ end }}
-    </h3>
+    <h3>{{ if eq $lang "en" }}Fiction{{ else if eq $lang "uk" }}Фікшен{{ else }}Фикшен{{ end }}</h3>
     <ul>
       {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "fiction" }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
