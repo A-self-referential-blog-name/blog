@@ -1,5 +1,5 @@
 ---
-title: "Во что я верю11111111"
+title: "Во что я верю"
 weight: 2
 slug: "what-i-believe-in"
 ---
