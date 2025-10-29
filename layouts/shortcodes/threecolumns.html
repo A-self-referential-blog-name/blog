@@ -10,7 +10,11 @@
 
 <div class="columns-wrapper">
   <div class="column">
-    <h3>{{ if eq $lang "en" }}Near-philosophical{{ else if eq $lang "uk" }}Навколофілософське{{ else }}Околофилософское{{ end }}</h3>
+    <h3>
+      {{ if eq $lang "en" }}Near-philosophical
+      {{ else if eq $lang "uk" }}Навколофілософське
+      {{ else }}Околофилософское{{ end }}
+    </h3>
     <ul>
       {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "philosophyish" }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
@@ -19,24 +23,44 @@
       {{ end }}
     </ul>
 
-    <!-- Сворачиваемый блок: Тексты 2015–2020 (без фильтра по датам) -->
+    <!-- Сворачиваемый блок: Тексты 2015–2020 + знак вопроса -->
     <details class="folder">
       <summary class="folder-summary">
-        {{ if eq $lang "en" }}Texts 2015–2020{{ else if eq $lang "uk" }}Тексти 2015–2020{{ else }}Тексты 2015–2020{{ end }}
+        {{ if eq $lang "en" }}Texts 2015–2020
+        {{ else if eq $lang "uk" }}Тексти 2015–2020
+        {{ else }}Тексты 2015–2020{{ end }}
+
+        <!-- вопрос со всплывающим пояснением -->
+        <details class="info-note">
+          <summary class="question-mark">❔</summary>
+          <p class="note-text">
+            Т.к. несмотря на многочисленные с 2020 года попытки я не смог ни с кем обсудить свои тексты и философию вообще,
+            просто выкладываю их в том "сыром" и как минимум отчасти "наивном" виде, в котором они были составлены.
+          </p>
+        </details>
       </summary>
+
       <ul class="sublist">
         {{- $pages := where (where site.RegularPages "Lang" $lang) "Section" "==" "texts-2015-2020" -}}
         {{- range $pages.ByWeight -}}
           <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{- else -}}
-          <li><em>{{ if eq $lang "en" }}(no texts yet){{ else if eq $lang "uk" }}(поки немає текстів){{ else }}(пока нет текстов){{ end }}</em></li>
+          <li><em>
+            {{ if eq $lang "en" }}(no texts yet)
+            {{ else if eq $lang "uk" }}(поки немає текстів)
+            {{ else }}(пока нет текстов){{ end }}
+          </em></li>
         {{- end -}}
       </ul>
     </details>
   </div>
 
   <div class="column">
-    <h3>{{ if eq $lang "en" }}Other{{ else if eq $lang "uk" }}Різне{{ else }}Разное{{ end }}</h3>
+    <h3>
+      {{ if eq $lang "en" }}Other
+      {{ else if eq $lang "uk" }}Різне
+      {{ else }}Разное{{ end }}
+    </h3>
     <ul>
       {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "misc" }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
@@ -47,7 +71,11 @@
   </div>
 
   <div class="column">
-    <h3>{{ if eq $lang "en" }}Fiction{{ else if eq $lang "uk" }}Фікшен{{ else }}Фикшен{{ end }}</h3>
+    <h3>
+      {{ if eq $lang "en" }}Fiction
+      {{ else if eq $lang "uk" }}Фікшен
+      {{ else }}Фикшен{{ end }}
+    </h3>
     <ul>
       {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "fiction" }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
@@ -57,3 +85,4 @@
     </ul>
   </div>
 </div>
+
