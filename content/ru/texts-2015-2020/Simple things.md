@@ -1,6 +1,6 @@
 ---
 title: "Простые вещи"
-weight: 7
+weight: 6
 draft: false
 ---
 

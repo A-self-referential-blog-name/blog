@@ -1,6 +1,6 @@
 ---
 title: "Против материализма (устар.)"
-weight: 8
+weight: 1
 draft: false
 ---
 

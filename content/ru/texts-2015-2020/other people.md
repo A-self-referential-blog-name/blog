@@ -1,6 +1,6 @@
 ---
 title: "Другие люди"
-weight: 2
+weight: 7
 draft: false
 ---
 

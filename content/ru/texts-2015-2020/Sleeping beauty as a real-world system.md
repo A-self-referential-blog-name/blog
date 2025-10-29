@@ -1,6 +1,6 @@
 ---
 title: "Sleeping beauty as a real-world system"
-weight: 10
+weight: 3
 draft: false
 ---
 

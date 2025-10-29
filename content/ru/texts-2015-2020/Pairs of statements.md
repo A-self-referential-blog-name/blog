@@ -1,6 +1,6 @@
 ---
 title: "Пары высказываний"
-weight: 6
+weight: 10
 draft: false
 ---
 

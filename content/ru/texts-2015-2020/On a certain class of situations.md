@@ -1,6 +1,6 @@
 ---
 title: "Об одном классе ситуаций"
-weight: 5
+weight: 4
 draft: false
 ---
 

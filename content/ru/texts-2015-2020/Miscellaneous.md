@@ -1,6 +1,6 @@
 ---
 title: "Разное"
-weight: 9
+weight: 2
 draft: false
 ---
 
