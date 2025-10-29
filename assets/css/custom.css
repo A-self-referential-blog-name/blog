@@ -31,6 +31,7 @@ html.dark details[open] > :not(summary) {
   color: #fff;
 }
 
+/* ---------- Подсказка (tooltip) ---------- */
 .tooltip {
   position: relative;
   cursor: pointer;
@@ -63,32 +64,24 @@ html.dark details[open] > :not(summary) {
   pointer-events: auto;
 }
 
-/* фикс: показывать tooltip, когда класс .clicked */
 .tooltip.clicked .tooltiptext {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
 }
 
+/* ---------- Логотип ---------- */
 .logo {
   font-weight: 700;
-  font-size: 1.25rem; /* или 20px, если хочешь явно */
+  font-size: 1.25rem;
 }
-
-
-
-
-
-
-
-
 
 /* ---------- Адаптация под мобильные устройства ---------- */
 @media (max-width: 768px) {
   .columns-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 5rem; /* 🔺 БОЛЬШОЙ отступ между колонками */
+    gap: 5rem;
     align-items: flex-start;
     margin-left: 0 !important;
     padding-left: 1rem !important;
@@ -132,15 +125,13 @@ html.dark details[open] > :not(summary) {
   h1, h2, h3 {
     font-size: 1.1rem;
   }
-}
 
-@media (max-width: 768px) {
   .column {
-    margin-bottom: 3rem; /* увеличенный отступ между "колонками" */
+    margin-bottom: 3rem;
   }
 }
 
-/* ---------- Отступ между шапкой и колонками (на всех экранах) ---------- */
+/* ---------- Отступ между шапкой и колонками ---------- */
 .columns-wrapper {
   margin-top: 4rem;
 }
@@ -151,24 +142,19 @@ html.dark details[open] > :not(summary) {
   }
 }
 
-
-
 html.dark .main {
   color: #f5f5f5;
 }
 
-
 html.light .column a {
-  color: #111; /* почти чёрный */
+  color: #111;
 }
-
-
 
 html.light,
 html.light body,
 html.light .main {
-  background-color: #f4f4f4 !important;  /* немного серее белого */
-  color: #111 !important;                /* почти чёрный текст */
+  background-color: #f4f4f4 !important;
+  color: #111 !important;
 }
 
 /* ---------- Подсказка возле "Тексты 2015–2020" ---------- */
@@ -190,15 +176,26 @@ html.light .main {
 .info-note[open] .note-text {
   display: block;
   position: absolute;
+
+  /* Позиция — справа сверху от значка ❔ */
+  left: 1.2rem;
+  bottom: calc(100% + 0.4rem);
+  top: auto;
+
   background: var(--entry);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.5em;
   padding: 0.5em 1em;
-  max-width: 400px;
-  margin-top: 0.3em;
+
+  white-space: nowrap;   /* 🔹 весь текст в одну строку */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 800px;      /* ширина горизонтального окна */
+
   font-size: 0.9em;
-  z-index: 10;
+  z-index: 20;
   color: inherit;
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
 }
 
 html.light .info-note[open] .note-text {
