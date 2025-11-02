@@ -105,8 +105,8 @@ Apparently, if in situation S M, according to its mechanism, treats the factor �
 
 ---
 
-References
-<br style="line-height:0.5em;">
+**References**
+
 Dorr, Cian. 2002. “Sleeping Beauty: In Defence of Elga.” Analysis 62 (4): 292–296.
 <br style="line-height:0.5em;">
 Elga, Adam. 2000. “Self-Locating Belief and the Sleeping Beauty Problem.” Analysis 60 (2): 143-147.
