@@ -4,6 +4,8 @@ weight: 3
 draft: false
 ---
 
+---
+
 **Abstract**: The article proposes an explanation of why the answer to the Sleeping Beauty problem is 1/3, by considering Sleeping Beauty as a real-world system [^1] composed of parts. 
 
 ---
