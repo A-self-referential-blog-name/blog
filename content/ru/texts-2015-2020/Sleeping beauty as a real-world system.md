@@ -4,8 +4,6 @@ weight: 3
 draft: false
 ---
 
----
-
 **Abstract**: The article proposes an explanation of why the answer to the Sleeping Beauty problem is 1/3, by considering Sleeping Beauty as a real-world system [^1] composed of parts. 
 
 ---
@@ -49,7 +47,6 @@ It seems that my only suggestion compared to his reasoning is the idea of where 
 
 **3\. The proposed ‘solution’** [^3]
 
-<br style="line-height:0.5em;">
 Let us try to solve this by considering SB as a real-world system composed of parts, some of which acquire information only insofar as that information is relevant to the problem this agent [^4] deals with. 
 Consider a hypothetical structure of SB’s ‘Probability computing subsystem’ (henceforth PCS), such that it produces the answer ‘1/3’. [^5] Let PCS consist, at least, of small agents designed to compute probabilities (which we will call p-agents), and of M --- the ‘manager of p-agents’. M has access to all information available to SB and, when it receives a request to compute a probability, delegates this task to the appropriate p-agent. 
 
