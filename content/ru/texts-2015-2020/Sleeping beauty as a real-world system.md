@@ -29,7 +29,7 @@ For that, we need:
 **2\. Where the problem is**
 
 The intuition about Y is simple: SB has learned that she is in the experiment. 
-<br style="line-height:0.5em;">
+
 Suppose that on Sunday the coin was equally likely to land Heads or Tails, and that today is equally likely to be Monday or Tuesday. Let X = ‘the result was Heads’, Z = ‘today is Monday’; suppose that X and Z are independent. Let A = (Heads, Monday), B = (Heads, Tuesday), C = (Tails, Monday), D = (Tails, Tuesday). P(X)=P(Z)=1/2; thus P(A) = P(B) = P(C) = P(D) = 1/4. 
 <br style="line-height:0.5em;">
 Let Y = (A or C or D). Then P(Y|X) = 1/2, P(Y|not-X) = 1, P(X|Y) = P(Y|X)P(X) / (P(Y|X)P(X) + P(Y|not-X)P(not-X)) = 1/3. 
