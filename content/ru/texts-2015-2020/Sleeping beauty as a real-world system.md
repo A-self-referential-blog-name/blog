@@ -24,6 +24,8 @@ For that, we need:
 <br style="line-height:0.5em;">
 (b) A strange situation arises: on Sunday, SB must assign probability 1/2 to X, while understanding that on Monday, when she is awakened, she will assign it 1/3. According to (a), SB receives some new information, but she already knows on Sunday that she will receive it on Monday --- which means this strangeness remains and requires clarification. 
 
+---
+
 **2\. Where the problem is**
 
 The intuition about Y is simple: SB has learned that she is in the experiment. 
@@ -42,6 +44,8 @@ It seems that, in our case, there is no moment in time corresponding to (I).
 
 Dorr (2002) proposes an alternative experiment: SB is also awakened in case B = (Heads, Tuesday), but in this case, after some time t, her memory is restored. In this scenario, the (I–II) chronology is preserved: (I) holds until time t, (II) --- afterward. As t tends to 0, this situation resembles ours. 
 It seems that my only suggestion compared to his reasoning is the idea of where the “intervening period when she is unsure about her temporal location while still having degree of belief 1/2 in HEADS” (at the end of his paper) might be found. 
+
+---
 
 **3\. The proposed ‘solution’** [^3]
 
@@ -75,6 +79,8 @@ Here is the chronology of events in our case:
 6\. W computes P(X | Y) = 1/3.
 <br style="line-height:0.5em;">
 7\. Amnesia affects PCS (i.e., the information just received by PCS is not retained in its long-term memory after (Tails, Monday)).
+
+---
 
 **4\. On (b) question**
 
