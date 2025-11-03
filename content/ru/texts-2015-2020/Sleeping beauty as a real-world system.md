@@ -1,7 +1,7 @@
 ---
 title: "Sleeping beauty as a real-world system"
 weight: 3
-draft: false
+draft: true
 ---
 
 ---
@@ -21,12 +21,11 @@ The Sleeping Beauty (henceforth SB) Problem: [^2]
 SB is participating in an experiment. On Sunday a coin is tossed, with a 50% chance of Heads (SB does not know the result). If it’s Heads, she is put to sleep and awakened on Monday, and that’s it. If it’s Tails, she is put to sleep, awakened on Monday, put to sleep again with no memory of the first awakening, and awakened again on Tuesday --- then it ends. You are SB, and you’ve been awakened. You don’t know the result of the coin toss, nor what day it is. What probability should be assigned to the event X = ‘the result was Heads’? 1/2, because on Sunday you would have assigned such a probability, and since you’ve received no new information, the probability shouldn’t have changed? Or 1/3, because if the experiment is repeated 1000 times, you will be awakened about 1500 times, and in roughly 500 of them, the correct answer to ‘what was the result?’ will be ‘Heads’? (Alternatively: When SB wakes up, she knows that either A = (Heads, Monday), or C = (Tails, Monday), or D = (Tails, Tuesday). Given that it’s Monday, the probability of Heads is 1/2; given that it was Tails, the probability of it being Monday is apparently 1/2; so P(A) = P(C) = P(D) = 1/3; P(X) = P(A) = 1/3.)
 
 Let us try to show that it’s reasonable to speak of a ‘subjective’ probability of 1/3 rather than 1/2.
-<br style="line-height:0.5em;"> 
 For that, we need: 
 <br style="line-height:0.5em;">
-(a) To find an event Y that she has learned about and for which P(X|Y) = 1/3.
+**(a)** To find an event Y that she has learned about and for which P(X|Y) = 1/3.
 <br style="line-height:0.5em;">
-(b) A strange situation arises: on Sunday, SB must assign probability 1/2 to X, while understanding that on Monday, when she is awakened, she will assign it 1/3. According to (a), SB receives some new information, but she already knows on Sunday that she will receive it on Monday --- which means this strangeness remains and requires clarification. 
+**(b)** A strange situation arises: on Sunday, SB must assign probability 1/2 to X, while understanding that on Monday, when she is awakened, she will assign it 1/3. According to (a), SB receives some new information, but she already knows on Sunday that she will receive it on Monday --- which means this strangeness remains and requires clarification. 
 
 ---
 
