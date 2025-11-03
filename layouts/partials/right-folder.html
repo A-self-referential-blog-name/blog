@@ -1,0 +1,12 @@
+{{/* показывать локально всегда; онлайн — только если включён флаг */}}
+{{ $enabled := or .Site.IsServer .Site.Params.rightFolderEnabled }}
+{{ if $enabled }}
+
+<details class="folder" open>
+  <summary class="folder-summary">СиВС</summary>
+  <ul class="sublist">
+    <li><em>(тексты будут добавлены позже)</em></li>
+  </ul>
+</details>
+
+{{ end }}
