@@ -171,3 +171,18 @@ html.light .main {
   color: #111 !important;                /* почти чёрный текст */
 }
 
+
+/* Email link in header */
+.contact-email {
+  font-size: .9rem;
+  opacity: .8;
+  white-space: nowrap;
+}
+
+.contact-email a {
+  text-decoration: underline;
+}
+
+.contact-email a:hover {
+  opacity: 1;
+}

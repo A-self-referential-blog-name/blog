@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Philosophyishes on Self-referential blog name</title>
+    <link>http://127.0.0.1:1313/en/philosophyish/</link>
+    <description>Recent content in Philosophyishes on Self-referential blog name</description>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <atom:link href="http://127.0.0.1:1313/en/philosophyish/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Me</title>
+      <link>http://127.0.0.1:1313/en/philosophyish/about-me/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://127.0.0.1:1313/en/philosophyish/about-me/</guid>
+      <description>&lt;p&gt;Born in 1990. Living in Ukraine. Owing to my father, I could have become a mathematician and gone abroad (I was in the IMO 2007). Toward the end of high school (2006–2007), I fell into a negative psychological state that lasted for many years (stayed at home, did nothing, and felt awful). I don’t know what it was, how such a thing is even possible, or why it happened to me. In the end, I &amp;ldquo;had a childhood but no youth&amp;rdquo;, and now I&amp;rsquo;m &amp;ldquo;in a deep hole&amp;rdquo; (at this point, more in a practical sense than a psychological one). This (in many ways) loss of the years considered (in many ways) the best in life is (in different ways) irreparable.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What I believe in</title>
+      <link>http://127.0.0.1:1313/en/philosophyish/what-i-believe-in/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://127.0.0.1:1313/en/philosophyish/what-i-believe-in/</guid>
+      <description>&lt;p&gt;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

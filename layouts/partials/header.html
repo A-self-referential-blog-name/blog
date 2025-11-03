@@ -4,22 +4,32 @@
        style="display:flex;align-items:center;gap:.75rem;
               padding:0 .75rem;width:100%;box-sizing:border-box;">
 
-    <!-- Логотип слева --------------------------------------------------- -->
+    <!-- Логотип + email --------------------------------------------------- -->
     {{ $title := site.Title }}
-    <a class="logo"  accesskey="h"
-       href="{{ site.Home.RelPermalink }}">{{ $title }}</a>
+    <div style="display:flex;align-items:center;gap:.5rem;">
+      <a class="logo" accesskey="h"
+         href="{{ site.Home.RelPermalink }}">{{ $title }}</a>
+
+      <!-- >>> Email label <<< -->
+      <span class="contact-email">
+        <a href="mailto:myemailaddress4567@gmail.com"
+           title="myemailaddress4567@gmail.com">
+          email
+        </a>
+      </span>
+    </div>
 
     <!-- Блок справа (прижат к правому краю) ----------------------------- -->
     <div class="right" style="margin-left:auto;display:flex;align-items:center;gap:1rem;">
 
-      <!-- 1. Кнопка Home (единственная) --------------------------------- -->
-      <a  href="{{ site.Home.RelPermalink }}" accesskey="h">
+      <!-- 1. Кнопка Home ------------------------------------------------ -->
+      <a href="{{ site.Home.RelPermalink }}" accesskey="h">
         <span {{ if eq .RelPermalink site.Home.RelPermalink }}class="active"{{ end }}>
           Home
         </span>
       </a>
 
-      <!-- 2. Остальные пункты меню -------------------------------------- -->
+      <!-- 2. Меню ------------------------------------------------------- -->
       <ul id="menu" style="display:flex;gap:1rem;margin:0;list-style:none;padding:0;">
         {{ range site.Menus.main }}
           <li>
@@ -32,10 +42,10 @@
         {{ end }}
       </ul>
 
-      <!-- 3. Тумблер темы ------------------------------------------------ -->
+      <!-- 3. Тумблер темы ---------------------------------------------- -->
       <button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
 
-      <!-- 4. Смена языка ------------------------------------------------- -->
+      <!-- 4. Переключатель языка ---------------------------------------- -->
       <span class="lang-switch">
         {{ range $i, $lang := site.Languages }}
           {{ $code := $lang.Lang }}
@@ -53,3 +63,4 @@
     </div>
   </nav>
 </header>
+

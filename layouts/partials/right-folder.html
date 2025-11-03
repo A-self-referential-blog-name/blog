@@ -1,9 +1,7 @@
 {{/* layouts/partials/right-folder.html */}}
-{{ $flag := false }}
-{{ with .Site.Params.rightFolderEnabled }}{{ $flag = . }}{{ end }}
-{{ if or hugo.IsServer $flag }}
+{{ if .Site.Params.rightFolderEnabled }}
 <aside id="right-folder">
-  <details class="folder">
+  <details class="folder">  <!-- без open -->
     <summary class="folder-summary">СиВС</summary>
     <ul class="sublist">
       <li><em>(тексты будут добавлены позже)</em></li>

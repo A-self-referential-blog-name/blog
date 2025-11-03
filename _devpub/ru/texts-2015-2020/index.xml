@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Texts-2015-2020s on Название блога с самореференцией</title>
+    <link>http://127.0.0.1:1313/ru/texts-2015-2020/</link>
+    <description>Recent content in Texts-2015-2020s on Название блога с самореференцией</description>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>ru</language>
+    <atom:link href="http://127.0.0.1:1313/ru/texts-2015-2020/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Против материализма (устар.)</title>
+      <link>http://127.0.0.1:1313/ru/texts-2015-2020/against-materialism/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://127.0.0.1:1313/ru/texts-2015-2020/against-materialism/</guid>
+      <description>&lt;p&gt;Текст устарел, но выкладываю его +/- в том виде, в котором он был сложен в 2020 из записей 2015-2020.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;1) Это не аргумент против материализма, а попытка поставить под сомнение кажущийся очевидным факт, что жизнь бессмысленна.
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+2) Ниже может быть написано много глупостей. Не оговариваю это после каждого предложения.
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+3) Не пытаюсь давать четкие дефиниции &amp;mdash; это не статья, претендующая на какую-то техническую правильность. &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+4) I часть &amp;mdash; &amp;ldquo;введение&amp;rdquo;. II часть &amp;mdash; основная.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Разное</title>
+      <link>http://127.0.0.1:1313/ru/texts-2015-2020/miscellaneous/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://127.0.0.1:1313/ru/texts-2015-2020/miscellaneous/</guid>
+      <description>&lt;p&gt;1) Включил сюда то, что показалось адекватным включить. Но я не знаю, так ли это.
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+2) Везде может быть много глупостей.
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+3) Где-то может быть &amp;ldquo;неумышленный плагиат&amp;rdquo;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Люди &amp;mdash; самые интересные объекты изучения не потому что человек объективно интереснее чем вода или элементарные частицы или звезды, а потому что ты сам не вода, не элементарная частица и не звезда, а человек. Именно поэтому изучение именно человека ведет к крышесносным парадоксам.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sleeping beauty as a real-world system</title>
+      <link>http://127.0.0.1:1313/ru/texts-2015-2020/sleeping-beauty-as-a-real-world-system/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://127.0.0.1:1313/ru/texts-2015-2020/sleeping-beauty-as-a-real-world-system/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;Этот текст, изначально написанный в 2020, превратил в 2025 в статью (см. ниже) и неудачно пытался подать в журналы. Т.к. я ни с кем не смог его обсудить, просто выкладываю здесь.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Abstract&lt;/strong&gt;: The article proposes an explanation of why the answer to the Sleeping Beauty problem is 1/3, by considering Sleeping Beauty as a real-world system &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; composed of parts.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;1. What we should do&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The Sleeping Beauty (henceforth SB) Problem: &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+SB is participating in an experiment. On Sunday a coin is tossed, with a 50% chance of Heads (SB does not know the result). If it’s Heads, she is put to sleep and awakened on Monday, and that’s it. If it’s Tails, she is put to sleep, awakened on Monday, put to sleep again with no memory of the first awakening, and awakened again on Tuesday &amp;mdash; then it ends. You are SB, and you’ve been awakened. You don’t know the result of the coin toss, nor what day it is. What probability should be assigned to the event X = ‘the result was Heads’? 1/2, because on Sunday you would have assigned such a probability, and since you’ve received no new information, the probability shouldn’t have changed? Or 1/3, because if the experiment is repeated 1000 times, you will be awakened about 1500 times, and in roughly 500 of them, the correct answer to ‘what was the result?’ will be ‘Heads’? (Alternatively: When SB wakes up, she knows that either A = (Heads, Monday), or C = (Tails, Monday), or D = (Tails, Tuesday). Given that it’s Monday, the probability of Heads is 1/2; given that it was Tails, the probability of it being Monday is apparently 1/2; so P(A) = P(C) = P(D) = 1/3; P(X) = P(A) = 1/3.)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Об одном классе ситуаций</title>
+      <link>http://127.0.0.1:1313/ru/texts-2015-2020/on-a-certain-class-of-situations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://127.0.0.1:1313/ru/texts-2015-2020/on-a-certain-class-of-situations/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;1) У меня нет нужных знаний по психологии и биологии, поэтому ниже написано много глупостей.
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+2) Уверен, что можно придумать контрпримеры и, в ответ на них, уточняющие формулировки, но это всё не то, что нас интересует. По смыслу текста вроде понятно, о ситуациях какого типа речь &amp;mdash; они образуют достаточно узкий подкласс обозначенного класса ситуаций.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Класс ситуаций:
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+Человек N делает действие Х, вследствие чего происходит событие J.&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Вследствие&amp;rdquo; значит, что событие J является прямым следствием Х в смысле, что они не являются двумя разными следствиями одной и той же причины или т.п.
+Например, если человек обжег палец, совершил действие Х и потом произошло событие J, где Х &amp;mdash; это вскрик от боли, а J &amp;mdash; это &amp;ldquo;человек пошел держать палец под холодной водой&amp;rdquo;, то это не наш случай, хоть J и следует как правило за Х.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ночной экспресс (2 варианта)</title>
+      <link>http://127.0.0.1:1313/ru/texts-2015-2020/night-express/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://127.0.0.1:1313/ru/texts-2015-2020/night-express/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Вариант 2015-2020&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Анна открыла глаза. Купе поезда было в полумраке. На коленях лежала книга, открытая посредине.&lt;/p&gt;
+&lt;p&gt;Несколько минут она бездумно смотрела в окно. За окном были домики и деревья. Необъясненные, они вызывали сильное мистическое чувство.&lt;/p&gt;
+&lt;p&gt;Анна осмотрела вагон. В другом конце вагона сидело несколько человек.&lt;/p&gt;
+&lt;p&gt;Иногда люди казались ей замкнутыми вселенными, находящимися на недосягаемых расстояниях, иногда &amp;mdash; объектами среди других объектов, иногда &amp;mdash; существами, чей внутренний мир необычайно важно воспринимать как истину, то есть таким же реальным, как свой; если мировоззрение другого и Анны были несовместимы в чем-то существенном, например в том, осмысленно ли или верно ли некое утверждение, Анне казалось правильным одновременно мыслить его как верное и неверное, как осмысленное и бессмысленное.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Простые вещи</title>
+      <link>http://127.0.0.1:1313/ru/texts-2015-2020/simple-things/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://127.0.0.1:1313/ru/texts-2015-2020/simple-things/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;(2015)&lt;/p&gt;
+&lt;p&gt;Что такое &amp;ldquo;простые вещи&amp;rdquo;, из которых складываются &amp;ldquo;сложные вещи&amp;rdquo;, из которых состоит мир? Без понимания, что такое &amp;ldquo;простая вещь&amp;rdquo;, в мышлении не может быть ясности. А без ясности в мышлении мы не можем считать что-то истинным. А если мы не можем считать что-то истинным, то мы не может ни во что верить. А если мы не можем ни во что верить, то жизнь не имеет смысла.&lt;/p&gt;
+&lt;p&gt;1. Черный квадрат (или черный отрезок, или даже точка) на белом фоне &amp;mdash; это &amp;ldquo;простая вещь&amp;rdquo;? Что может быть проще этого &amp;mdash; цветов &amp;ldquo;белый&amp;rdquo; и &amp;ldquo;черный&amp;rdquo; и геометрической фигуры, многократным добавлением которой можно создать любой рисунок? Но в физическом мире не существует ни точек, ни отрезков, ни квадратов &amp;mdash; они существуют только в представлении человека и суть ментальные события. Ментальное событие - следствие физической структуры мозга (или тождественны физической структуре мозга, если угодно). Чтобы возник &amp;ldquo;опыт&amp;rdquo; квадрата, или отрезка, или точки, должно произойти сложное событие в мозге &amp;mdash; слаженная активность множества нейронов, которая сводится к машинерии более мелких физических частиц. Тогда как черный квадрат, или отрезок, или точка, может быть &amp;ldquo;простой вещью&amp;rdquo;?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Другие люди</title>
+      <link>http://127.0.0.1:1313/ru/texts-2015-2020/other-people/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://127.0.0.1:1313/ru/texts-2015-2020/other-people/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;То, что я ощущаю парадоксальным, можно сформулировать так:&lt;/p&gt;
+&lt;p&gt;Вера в реальность &amp;ldquo;внутреннего мира&amp;rdquo; (далее &amp;ldquo;вм&amp;rdquo;) другого человека, &amp;ldquo;восприятие его как истинно существующего пространства&amp;rdquo;, кажется несовместимой с возможной несовместимостью некоторых утверждений, &amp;ldquo;сцепленных&amp;rdquo; с его &amp;ldquo;вм&amp;rdquo;, с некоторыми утверждениями, &amp;ldquo;сцепленными&amp;rdquo; с моим &amp;ldquo;вм&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Далее идут несколько бессвязные попытки выразить это (без претензии на доказательство чего-либо).&lt;/p&gt;
+&lt;p&gt;1. Если я не отрицаю существование физического мира, то материалист я или дуалист &amp;mdash; я должен верить, что &amp;ldquo;объективно&amp;rdquo; &amp;ldquo;вм&amp;rdquo; другого существует в том же смысле и в той же мере, что и мой, не важно, что узнаю я о нем через косвенные свидетельства (поведение и речь другого человека, сканирование его мозга). (Наивный вопрос, которым задаются некоторые люди в детстве &amp;mdash; &amp;ldquo;А если другие люди &amp;mdash; просто автоматы?&amp;rdquo; &amp;mdash; перебивается вопросом &amp;ldquo;В каком смысле я не автомат?&amp;rdquo;.) Даже если &amp;ldquo;я&amp;rdquo; не существует, поверить в это невозможно; когда я думаю о другом человеке, я верю в его существование; и я верю, что существует &amp;ldquo;внутренний мир&amp;rdquo; (&amp;ldquo;вм&amp;rdquo;) &amp;mdash; или &amp;ldquo;субъективный опыт&amp;rdquo; &amp;mdash; соответствующий этому &amp;ldquo;я&amp;rdquo;. Может даже возможно не верить в &amp;ldquo;я&amp;rdquo;, веря в &amp;ldquo;субъективный опыт&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Атлас</title>
+      <link>http://127.0.0.1:1313/ru/texts-2015-2020/atlas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://127.0.0.1:1313/ru/texts-2015-2020/atlas/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&amp;ldquo;Может быть так, что невозможно построить цельную карту, потому, возможно всегда, придется довольствоваться набором карт (атласом).&amp;rdquo;
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+Фразу выше можно понять по-разному, и в каждом из значений ниже (которые могут отчасти пересекаться) она кажется содержательной:&lt;/p&gt;
+&lt;p&gt;1. Наука как совокупность карт: физика, химия, биология, психология и пр. Редукционизм верен, но бессмысленно говорить о биологии в терминах физики, о психологии в терминах биологии и т.д.&lt;/p&gt;
+&lt;p&gt;2. Экзистенциалисты говорят о людях, люди состоят из атомов, физика говорит об атомах, и, значит, о людях &amp;mdash; но вы никак не сведете смыслы, которые люди видят в текстах экзистенциалистов, к смыслам, которые можно передать через текст по физике.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Об истинности высказываний некоторых типов</title>
+      <link>http://127.0.0.1:1313/ru/texts-2015-2020/on-the-truth-value-of-certain-types-of-statements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://127.0.0.1:1313/ru/texts-2015-2020/on-the-truth-value-of-certain-types-of-statements/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;В некоторых местах я наверняка говорю глупости.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&amp;ldquo;Вчера был дождь&amp;rdquo; или истина, или ложь, но есть фразы, ответ на вопрос об истинности (или даже о степени истинности) которых вообще не факт, что существует; при этом люди не могут не оценивать такие фразы как истинные или ложные (по крайней мере я не могу). Речь не о том, что сложно или невозможно определить, истинное ли высказывание, а о степени, в которой такие высказывания могут считаться истинными в принципе.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Пары высказываний</title>
+      <link>http://127.0.0.1:1313/ru/texts-2015-2020/pairs-of-statements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://127.0.0.1:1313/ru/texts-2015-2020/pairs-of-statements/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;Просто несколько пар противоположных высказываний на разные темы. Их наличие на эти темы кажется мне несколько контринтуитивным. Я не искал их специально; уверен, что можно подобрать более удачные цитаты.&lt;/p&gt;
+&lt;p&gt;1. Верят ли люди &amp;ldquo;на самом деле&amp;rdquo; в собственную смерть?
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+Варианты:
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+(а) Согласно своей природе, люди на самом деле знают, что смертны, но скрывают это за механизмами психологической защиты.
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+(б) Согласно своей природе, люди на самом деле не верят, что смертны, потому что, несмотря на все косвенные свидетельства, не могут поверить в это.
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+Когда мы говорим о таких вещах, мы вроде говорим о философии &amp;mdash; но когда мы говорим о людях и о том, верят ли они во что-то &amp;ldquo;на самом деле&amp;rdquo;, мы находимся в плоскости психологии, где человек &amp;mdash; это физическая система, пассивные убеждения человека &amp;mdash; это что-то вроде предрасположенности таких-то нейронных сетей к такой-то активности, активные убеждения человека &amp;mdash; это что-то вроде этой их активности, убеждение &amp;ldquo;на самом деле&amp;rdquo; (если о нем вообще осмысленно говорить) &amp;mdash; это, допустим, такое убеждение, которому соответствует активность, имеющая доступ к такими-то психическим процессам, или т.п., и у разных людей оно, вообще говоря, может быть разным.
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+(а) Ф. Добжанский (цитируется К. Поппером):
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+&amp;ldquo;&lt;em&gt;I am not only alive but aware of being alive. Moreover, I know that I shall not remain alive for ever, that death is inevitable. I possess the attributes of self-awareness and death awareness.&lt;/em&gt;&amp;rdquo;
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+(б) З. Фрейд:
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+&amp;ldquo;&lt;em&gt;Психоаналитическая школа, которую я, как вам известно, представляю, смеет утверждать, что мы &amp;mdash; каждый из нас &amp;mdash; в глубине души не верим в собственную смерть.&lt;/em&gt;&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Об одном вторичном философском вопросе (2024)</title>
+      <link>http://127.0.0.1:1313/ru/texts-2015-2020/on-a-certain-secondary-philosophical-question/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://127.0.0.1:1313/ru/texts-2015-2020/on-a-certain-secondary-philosophical-question/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;У меня нет сформированного вывода по вопросу ниже.&lt;/p&gt;
+&lt;p&gt;Вопрос:
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+&amp;ldquo;Почему выдуманные истории столь значимы для меня?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Удивительным образом почти всё, что я смотрел
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+(1) Различные направления Literary theory;
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+(2) Книги о том, как писать книги и сценарии;
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+(3) Philosophy of fiction,
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+оказалось нерелевантным для ответа на этот вопрос.&lt;/p&gt;
+&lt;p&gt;Несколько утверждений (без вывода):&lt;/p&gt;
+&lt;p&gt;1. Значимо то, что происходит, когда истории &amp;ldquo;падают&amp;rdquo; в мое воображение / в мой &amp;ldquo;внутренний мир&amp;rdquo;. Значим результат взаимодействия моего воображения и выдуманной истории.
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+Мои мысли о книге/кино/т.п. для меня важнее, чем то, что хотел(и) вложить автор(ы) (я &amp;ldquo;падаю&amp;rdquo; в свои мысли/фантазии, вызванные тем, что я читаю/смотрю, вместо того, чтобы следовать истории, которую я читаю/смотрю).
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+Н. Холланд:
+&lt;br style=&#34;line-height:0.5em;&#34;&gt;
+&amp;ldquo;&lt;em&gt;What we perceive in the literary work provides, as it were, pegs on which we can hang our own deepest and probably unconscious wishes and feelings.&lt;/em&gt;&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
