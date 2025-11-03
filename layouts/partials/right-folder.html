@@ -1,12 +1,18 @@
-{{/* показывать локально всегда; онлайн — только если включён флаг */}}
-{{ $enabled := or .Site.IsServer .Site.Params.rightFolderEnabled }}
-{{ if $enabled }}
+{{/* layouts/partials/right-folder.html */}}
 
-<details class="folder" open>
-  <summary class="folder-summary">СиВС</summary>
-  <ul class="sublist">
-    <li><em>(тексты будут добавлены позже)</em></li>
-  </ul>
-</details>
+{{/* Показывать локально (hugo.IsServer) ИЛИ если явно включён флаг в params */}}
+{{- $show := false -}}
+{{- with site.Params.rightFolderEnabled -}}{{- $show = . -}}{{- end -}}
+{{- if or (hugo.IsServer) $show -}}
 
-{{ end }}
+<aside id="right-folder">
+  <details class="folder" open>
+    <summary class="folder-summary">СиВС</summary>
+    <ul class="sublist">
+      <li><em>(тексты будут добавлены позже)</em></li>
+    </ul>
+  </details>
+</aside>
+
+{{- end -}}
+
