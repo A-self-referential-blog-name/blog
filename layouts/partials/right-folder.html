@@ -1,10 +1,7 @@
 {{/* layouts/partials/right-folder.html */}}
-
-{{/* Показывать локально (hugo.IsServer) ИЛИ если явно включён флаг в params */}}
-{{- $show := false -}}
-{{- with site.Params.rightFolderEnabled -}}{{- $show = . -}}{{- end -}}
-{{- if or (hugo.IsServer) $show -}}
-
+{{ $flag := false }}
+{{ with .Site.Params.rightFolderEnabled }}{{ $flag = . }}{{ end }}
+{{ if or hugo.IsServer $flag }}
 <aside id="right-folder">
   <details class="folder">
     <summary class="folder-summary">СиВС</summary>
@@ -13,6 +10,6 @@
     </ul>
   </details>
 </aside>
+{{ end }}
 
-{{- end -}}
 
