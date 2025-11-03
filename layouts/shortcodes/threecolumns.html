@@ -35,25 +35,28 @@
     </details>
   </div>
 
-  <div class="column">
-    <h3>{{ if eq $lang "en" }}Other{{ else if eq $lang "uk" }}Різне{{ else }}Разное{{ end }}</h3>
-    <ul>
-      {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "misc" }}
-        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-      {{ else }}
-        <li>No posts</li>
-      {{ end }}
-    </ul>
-  </div>
+<div class="column">
+  <h3>{{ if eq $lang "en" }}Other{{ else if eq $lang "uk" }}Різне{{ else }}Разное{{ end }}</h3>
+  <ul>
+    {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "misc" }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</div>
 
-  <div class="column">
-    <h3>{{ if eq $lang "en" }}Fiction{{ else if eq $lang "uk" }}Фікшен{{ else }}Фикшен{{ end }}</h3>
-    <ul>
-      {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "fiction" }}
-        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-      {{ else }}
-        <li>No posts</li>
-      {{ end }}
-    </ul>
-  </div>
+
+<div class="column">
+  <h3>{{ if eq $lang "en" }}Fiction{{ else if eq $lang "uk" }}Фікшен{{ else }}Фикшен{{ end }}</h3>
+
+  {{ partial "right-folder.html" . }}   <!-- переносим сюда -->
+
+  <ul>
+    {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "fiction" }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</div>
+
+
+
 </div>
