@@ -5,14 +5,6 @@
 <html lang="{{ .Site.Language.Lang }}">
 <head>
 
-
-
-
-
-
-
-
-
 <script>
   (function () {
     const key = 'pref-theme';
@@ -22,17 +14,6 @@
     root.classList.add(theme);
   })();
 </script>
-
-
-
-
-
-
-
-
-
-
-
 
   {{ partial "head.html" . }}            {{/* базовый <head> от PaperMod */}}
 
@@ -50,22 +31,56 @@
     {{ block "main" . }}{{ end }}
   </main>
 
+  {{ partial "footer.html" . }}
 
-{{ partial "footer.html" . }}
-
-
-
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const topLink = document.getElementById("top-link");
-        if (topLink) {
-          topLink.addEventListener("click", function (e) {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          });
-        }
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const topLink = document.getElementById("top-link");
+    if (topLink) {
+      topLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
-    </script>
-  </body>
+    }
+  });
+</script>
+
+<!-- ✅ EMAIL COPY SCRIPT -->
+<script>
+(function () {
+  const link = document.getElementById('email-link');
+  if (!link) return;
+  const wrapper = link.closest('.contact-email');
+  const email = link.getAttribute('data-email');
+
+  link.addEventListener('click', function (e) {
+    // Left click: copy to clipboard instead of opening mail app
+    e.preventDefault();
+    if (!email) return;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(showCopied, showCopied);
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = email;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (_) {}
+      document.body.removeChild(ta);
+      showCopied();
+    }
+  });
+
+  // Right click = default behaviour (mailto etc.)
+  // Do nothing here on purpose
+
+  function showCopied() {
+    if (!wrapper) return;
+    wrapper.classList.add('copied-show');
+    setTimeout(() => wrapper.classList.remove('copied-show'), 1200);
+  }
+})();
+</script>
+
+</body>
 </html>

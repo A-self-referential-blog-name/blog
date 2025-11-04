@@ -1,33 +1,30 @@
 <!-- layouts/partials/header.html -->
 <header class="header">
   <nav class="nav"
-       style="display:flex;align-items:center;gap:.75rem;
-              padding:0 .75rem;width:100%;box-sizing:border-box;">
+       style="display:flex;align-items:center;gap:.75rem;padding:0 .75rem;width:100%;box-sizing:border-box;">
 
-    <!-- Логотип + email --------------------------------------------------- -->
+    <!-- ЛЕВО: логотип -->
     {{ $title := site.Title }}
-    <div style="display:flex;align-items:center;gap:.5rem;">
-      <a class="logo" accesskey="h"
-         href="{{ site.Home.RelPermalink }}">{{ $title }}</a>
+    <a class="logo" accesskey="h" href="{{ site.Home.RelPermalink }}">{{ $title }}</a>
 
-      <!-- >>> Email label <<< -->
-<span class="contact-email tooltip">
-  <a href="mailto:myemailaddress4567@gmail.com" aria-label="Email">email</a>
-  <span class="tooltiptext">myemailaddress4567@gmail.com</span>
-</span>
+    <!-- ЦЕНТР: email (ровно по центру шапки) -->
+    <div class="contact-center" style="flex:1;display:flex;justify-content:center;">
+      <span class="contact-email">
+        <a id="email-link"
+           href="mailto:myemailaddress4567@gmail.com"
+           data-email="myemailaddress4567@gmail.com"
+           title="myemailaddress4567@gmail.com">email</a>
+        <span class="tip" aria-hidden="true">myemailaddress4567@gmail.com</span>
+        <span class="copied" aria-live="polite" aria-atomic="true">copied!</span>
+      </span>
+    </div>
 
-
-    <!-- Блок справа (прижат к правому краю) ----------------------------- -->
-    <div class="right" style="margin-left:auto;display:flex;align-items:center;gap:1rem;">
-
-      <!-- 1. Кнопка Home ------------------------------------------------ -->
+    <!-- ПРАВО: Home + меню + тумблер + языки -->
+    <div class="right" style="display:flex;align-items:center;gap:1rem;">
       <a href="{{ site.Home.RelPermalink }}" accesskey="h">
-        <span {{ if eq .RelPermalink site.Home.RelPermalink }}class="active"{{ end }}>
-          Home
-        </span>
+        <span {{ if eq .RelPermalink site.Home.RelPermalink }}class="active"{{ end }}>Home</span>
       </a>
 
-      <!-- 2. Меню ------------------------------------------------------- -->
       <ul id="menu" style="display:flex;gap:1rem;margin:0;list-style:none;padding:0;">
         {{ range site.Menus.main }}
           <li>
@@ -40,10 +37,8 @@
         {{ end }}
       </ul>
 
-      <!-- 3. Тумблер темы ---------------------------------------------- -->
       <button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
 
-      <!-- 4. Переключатель языка ---------------------------------------- -->
       <span class="lang-switch">
         {{ range $i, $lang := site.Languages }}
           {{ $code := $lang.Lang }}
@@ -61,4 +56,3 @@
     </div>
   </nav>
 </header>
-
