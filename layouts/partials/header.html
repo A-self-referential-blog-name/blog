@@ -1,28 +1,35 @@
 <!-- layouts/partials/header.html -->
 <header class="header">
   <nav class="nav"
-       style="display:flex;align-items:center;gap:.75rem;padding:0 .75rem;width:100%;box-sizing:border-box;">
+       style="display:flex;align-items:center;gap:.75rem;
+              padding:0 .75rem;width:100%;box-sizing:border-box;">
 
-    <!-- ЛЕВО: логотип -->
-    {{ $title := site.Title }}
-    <a class="logo" accesskey="h" href="{{ site.Home.RelPermalink }}">{{ $title }}</a>
+    <!-- ЛЕВО -->
+    <div class="nav-left" style="display:flex;align-items:center;gap:.5rem;">
+      <a class="logo" accesskey="h" href="{{ site.Home.RelPermalink }}">
+        {{ site.Title }}
+      </a>
+    </div>
 
-    <!-- ЦЕНТР: email (ровно по центру шапки) -->
-    <div class="contact-center" style="flex:1;display:flex;justify-content:center;">
-      <span class="contact-email">
+    <!-- ЦЕНТР: email -->
+    <div class="nav-center">
+      <span class="contact-email" title="myemailaddress4567@gmail.com">
         <a id="email-link"
            href="mailto:myemailaddress4567@gmail.com"
-           data-email="myemailaddress4567@gmail.com"
-           title="myemailaddress4567@gmail.com">email</a>
-        <span class="tip" aria-hidden="true">myemailaddress4567@gmail.com</span>
-        <span class="copied" aria-live="polite" aria-atomic="true">copied!</span>
+           data-email="myemailaddress4567@gmail.com">
+          email
+        </a>
+        <span class="email-tooltip" aria-hidden="true">myemailaddress4567@gmail.com</span>
+        <span class="email-copied" aria-hidden="true">copied!</span>
       </span>
     </div>
 
-    <!-- ПРАВО: Home + меню + тумблер + языки -->
-    <div class="right" style="display:flex;align-items:center;gap:1rem;">
+    <!-- ПРАВО -->
+    <div class="nav-right" style="display:flex;align-items:center;gap:1rem;">
       <a href="{{ site.Home.RelPermalink }}" accesskey="h">
-        <span {{ if eq .RelPermalink site.Home.RelPermalink }}class="active"{{ end }}>Home</span>
+        <span {{ if eq .RelPermalink site.Home.RelPermalink }}class="active"{{ end }}>
+          Home
+        </span>
       </a>
 
       <ul id="menu" style="display:flex;gap:1rem;margin:0;list-style:none;padding:0;">
