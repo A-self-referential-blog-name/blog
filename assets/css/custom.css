@@ -237,3 +237,70 @@ html.light .main {
 }
 .contact-email.copied-show .email-copied{ opacity: 1; }
 
+
+
+/* ===== Email tooltip & copy badge ===== */
+.contact-email {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.contact-email .email-link {
+  text-decoration: underline dotted;
+}
+
+.contact-email .tooltiptext {
+  position: absolute;
+  left: 0;
+  top: 1.6em;                 /* ниже слова email */
+  background: rgba(30, 30, 30, .95);
+  color: #fff;
+  padding: .35rem .5rem;
+  border-radius: 6px;
+  font-size: .9rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2px);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* маленькая стрелочка */
+.contact-email .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 10px;
+  border: 6px solid transparent;
+  border-bottom-color: rgba(30, 30, 30, .95);
+}
+
+.contact-email:hover .tooltiptext,
+.contact-email .tooltiptext.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* badge "copied!" — появляется справа от слова email */
+.contact-email .copied-badge {
+  margin-left: .4rem;
+  background: #18a957;           /* спокойный зелёный */
+  color: #fff;
+  font-size: .78rem;
+  padding: .12rem .35rem;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(-2px);
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+.contact-email .copied-badge.show {
+  opacity: 1;
+  transform: translateY(0);
+}

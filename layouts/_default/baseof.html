@@ -22,6 +22,45 @@
   <script src="/js/theme-toggle.js" defer></script>
 </head>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const link  = document.querySelector('.contact-email .email-link');
+  if (!link) return;
+
+  const email = link.dataset.email || 'myemailaddress4567@gmail.com';
+  const tip   = link.querySelector('.tooltiptext');
+  const badge = link.querySelector('.copied-badge');
+
+  // ЛКМ — копировать
+  link.addEventListener('click', function (e) {
+    // только левая кнопка
+    if (e.button !== 0) return;
+    e.preventDefault();
+    navigator.clipboard.writeText(email).then(() => {
+      // показать "copied!"
+      badge.classList.add('show');
+      setTimeout(() => badge.classList.remove('show'), 1200);
+    }).catch(() => {
+      // на всякий случай fallback: открываем mailto
+      window.location.href = 'mailto:' + email;
+    });
+  });
+
+  // ПКМ — НЕ блокируем (system/mailto по умолчанию)
+  link.addEventListener('contextmenu', function () {
+    // ничего не делаем, даём браузеру меню
+  });
+
+  // Подсказка на hover: управляем классом (чтобы не зависела от title)
+  link.addEventListener('mouseenter', () => tip && tip.classList.add('show'));
+  link.addEventListener('mouseleave', () => tip && tip.classList.remove('show'));
+});
+</script>
+
+
+
+
 <body>
   {{ partial "header.html" . }}
 
