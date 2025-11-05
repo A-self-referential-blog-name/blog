@@ -1,6 +1,2 @@
----
-title: "Главная страница"
----
-
-
+<!-- noop to avoid JSON front matter -->
 {{< threecolumns >}}

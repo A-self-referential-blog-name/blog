@@ -9,7 +9,8 @@
 </style>
 
 <div class="columns-wrapper">
-  <div class="column">
+  <!-- Левая колонка -->
+  <div class="column column-left">
     <h3>{{ if eq $lang "en" }}Near-philosophical{{ else if eq $lang "uk" }}Навколофілософське{{ else }}Околофилософское{{ end }}</h3>
     <ul>
       {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "philosophyish" }}
@@ -19,7 +20,7 @@
       {{ end }}
     </ul>
 
-    <!-- Сворачиваемый блок: Тексты 2015–2020 (без фильтра по датам) -->
+    <!-- Сворачиваемый блок: Тексты 2015–2020 -->
     <details class="folder">
       <summary class="folder-summary">
         {{ if eq $lang "en" }}Texts 2015–2020{{ else if eq $lang "uk" }}Тексти 2015–2020{{ else }}Тексты 2015–2020{{ end }}
@@ -35,28 +36,30 @@
     </details>
   </div>
 
-<div class="column">
-  <h3>{{ if eq $lang "en" }}Other{{ else if eq $lang "uk" }}Різне{{ else }}Разное{{ end }}</h3>
-  <ul>
-    {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "misc" }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  <!-- Центральная колонка -->
+  <div class="column column-center">
+    <h3>{{ if eq $lang "en" }}Other{{ else if eq $lang "uk" }}Різне{{ else }}Разное{{ end }}</h3>
+    <ul>
+      {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "misc" }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+
+  <!-- Правая колонка -->
+  <aside class="column column-right">
+    <h3>{{ if eq $lang "en" }}Fiction{{ else if eq $lang "uk" }}Фікшен{{ else }}Фикшен{{ end }}</h3>
+
+    <!-- сначала список Fiction -->
+    <ul>
+      {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "fiction" }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+
+    <!-- затем СиВС (только для ru), под "Фикшен", свёрнуто и без жирности -->
+    {{ if eq $lang "ru" }}
+      {{ partial "right-folder.html" . }}
     {{ end }}
-  </ul>
-</div>
-
-
-<div class="column">
-  <h3>{{ if eq $lang "en" }}Fiction{{ else if eq $lang "uk" }}Фікшен{{ else }}Фикшен{{ end }}</h3>
-
-  {{ partial "right-folder.html" . }}   <!-- переносим сюда -->
-
-  <ul>
-    {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "fiction" }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-    {{ end }}
-  </ul>
-</div>
-
-
-
+  </aside>
 </div>
