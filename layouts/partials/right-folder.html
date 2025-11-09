@@ -2,7 +2,15 @@
   <details class="folder">
     <summary class="folder-summary">СиВС</summary>
     <ul class="sublist">
-      <!-- пока нет материалов, оставляем пустым -->
+      {{/* Показываем RU-страницы из секции "sivs" по weight */}}
+      {{- $pages := where (where site.RegularPages "Lang" "ru") "Section" "==" "sivs" -}}
+      {{- if gt (len $pages) 0 -}}
+        {{- range $pages.ByWeight -}}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{- end -}}
+      {{- else -}}
+        <li><em>Скоро…</em></li>
+      {{- end -}}
     </ul>
   </details>
 </aside>

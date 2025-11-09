@@ -20,7 +20,6 @@
       {{ end }}
     </ul>
 
-    <!-- Сворачиваемый блок: Тексты 2015–2020 -->
     <details class="folder">
       <summary class="folder-summary">
         {{ if eq $lang "en" }}Texts 2015–2020{{ else if eq $lang "uk" }}Тексти 2015–2020{{ else }}Тексты 2015–2020{{ end }}
@@ -49,16 +48,14 @@
   <!-- Правая колонка -->
   <aside class="column column-right">
     <h3>{{ if eq $lang "en" }}Fiction{{ else if eq $lang "uk" }}Фікшен{{ else }}Фикшен{{ end }}</h3>
-
-    <!-- сначала список Fiction -->
     <ul>
       {{ range where (where site.RegularPages "Lang" $lang) "Section" "==" "fiction" }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}
     </ul>
 
-    <!-- затем СиВС (только для ru), под "Фикшен", свёрнуто и без жирности -->
-    {{ if eq $lang "ru" }}
+    {{/* СиВС показываем ТОЛЬКО локально (при `hugo server`) и только в RU */}}
+    {{ if and (eq $lang "ru") (hugo.IsServer) }}
       {{ partial "right-folder.html" . }}
     {{ end }}
   </aside>

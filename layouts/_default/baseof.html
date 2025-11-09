@@ -68,6 +68,9 @@ document.addEventListener('DOMContentLoaded', function () {
     {{ block "main" . }}{{ end }}
   </main>
 
+
+  {{ partial "footer-extra.html" . }}
+
   {{ partial "footer.html" . }}
 
   <script>

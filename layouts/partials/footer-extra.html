@@ -1,0 +1,121 @@
+<!-- layouts/partials/footer-extra.html -->
+<style>
+  .footer-email-row{
+    text-align:center;
+    line-height:1.2;
+    font-size:.95rem;
+    margin:1rem 0 .35rem 0;
+    position:relative;
+  }
+
+  .footer-email-row .email-link{
+    text-decoration:none;
+    cursor:pointer;
+    position:relative;
+  }
+
+  /* Tooltip */
+  .footer-email-row .email-tooltip{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%) translateY(2px);
+    bottom:1.6em;
+    padding:.35rem .55rem;
+    border-radius:6px;
+    font-size:.9rem;
+    line-height:1.2;
+    white-space:nowrap;
+    box-shadow:0 4px 14px rgba(0,0,0,.15);
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .18s ease, transform .18s ease, visibility .18s;
+    z-index:1;
+  }
+
+  /* Светлая тема */
+  html.light .footer-email-row .email-tooltip{
+    background:rgba(245,245,245,.95);
+    color:#111;
+    border:1px solid rgba(0,0,0,.12);
+  }
+
+  /* Тёмная тема */
+  html.dark .footer-email-row .email-tooltip{
+    background:rgba(35,35,35,.92);
+    color:#f5f5f5;
+    border:1px solid rgba(255,255,255,.1);
+  }
+
+  /* "copied" */
+  .footer-email-row .copied-badge{
+    margin-left:.4rem;
+    font-size:.78rem;
+    padding:.12rem .35rem;
+    border-radius:4px;
+    opacity:0;
+    transform:translateY(-2px);
+    transition:opacity .18s ease, transform .18s ease;
+  }
+  html.light .footer-email-row .copied-badge{
+    background:#000; color:#fff;
+  }
+  html.dark .footer-email-row .copied-badge{
+    background:#fff; color:#000;
+  }
+</style>
+
+<div class="footer-email-row">
+  <a href="mailto:viktorbohdanskyi@gmail.com"
+     class="email-link"
+     data-email="viktorbohdanskyi@gmail.com">
+    <span class="label">e-mail</span>
+
+    <span class="email-tooltip" role="tooltip" aria-hidden="true">
+      viktorbohdanskyi@gmail.com
+    </span>
+
+    <span class="copied-badge" aria-hidden="true">copied</span>
+  </a>
+</div>
+
+<script>
+(function () {
+  const root = document.currentScript.previousElementSibling;
+  const link = root && root.querySelector('.email-link');
+  if (!link) return;
+
+  const email   = link.getAttribute('data-email');
+  const tooltip = link.querySelector('.email-tooltip');
+  const badge   = link.querySelector('.copied-badge');
+
+  function showTooltip() {
+    tooltip.style.visibility = 'visible';
+    tooltip.style.opacity = '1';
+    tooltip.style.transform = 'translateX(-50%) translateY(0)';
+  }
+  function hideTooltip() {
+    tooltip.style.opacity = '0';
+    tooltip.style.visibility = 'hidden';
+    tooltip.style.transform = 'translateX(-50%) translateY(2px)';
+  }
+  link.addEventListener('mouseenter', showTooltip);
+  link.addEventListener('mouseleave', hideTooltip);
+  link.addEventListener('focus', showTooltip);
+  link.addEventListener('blur', hideTooltip);
+
+  link.addEventListener('click', async function (ev) {
+    ev.preventDefault();
+    try {
+      await navigator.clipboard.writeText(email);
+      badge.style.opacity = '1';
+      badge.style.transform = 'translateY(0)';
+      setTimeout(() => {
+        badge.style.opacity = '0';
+        badge.style.transform = 'translateY(-2px)';
+      }, 1200);
+    } catch {
+      window.location.href = 'mailto:' + email;
+    }
+  });
+})();
+</script>
