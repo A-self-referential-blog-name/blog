@@ -251,3 +251,25 @@ html.light .main {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+
+
+
+
+/* Пробел-отступ внутри списка СиВС */
+#right-folder .list-separator {
+  list-style: none;
+  margin: 1.8rem 0; /* немного больше, чем строка */
+  padding: 0;
+}
+
+
+
+
+
+#right-folder .list-separator {
+  list-style: none;
+  margin: 1.1rem 0;  /* высота отступа, можно подправить */
+  padding: 0;
+}

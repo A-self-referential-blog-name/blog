@@ -20,7 +20,8 @@
       {{ end }}
     </ul>
 
-    <details class="folder">
+    <!-- Сворачиваемый блок: Тексты 2015–2020 -->
+    <details id="left-texts-2015-2020" class="folder" data-persist="session">
       <summary class="folder-summary">
         {{ if eq $lang "en" }}Texts 2015–2020{{ else if eq $lang "uk" }}Тексти 2015–2020{{ else }}Тексты 2015–2020{{ end }}
       </summary>

@@ -1,12 +1,30 @@
 <aside id="right-folder">
-  <details class="folder">
+  <!-- запоминаем состояние раскрытия в пределах вкладки -->
+  <details id="right-sivs" class="folder" data-persist="session">
     <summary class="folder-summary">СиВС</summary>
+
     <ul class="sublist">
-      {{/* Показываем RU-страницы из секции "sivs" по weight */}}
+      {{/* RU-страницы из секции "sivs", отсортированные по weight */}}
       {{- $pages := where (where site.RegularPages "Lang" "ru") "Section" "==" "sivs" -}}
       {{- if gt (len $pages) 0 -}}
-        {{- range $pages.ByWeight -}}
-          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{- $pages = $pages.ByWeight -}}
+
+        {{/* Позиции, ПЕРЕД которыми вставляем отступ (можно править этот список) */}}
+        {{- $breaks := slice 1 2 8 14 20 26 -}}
+
+        {{- range $i, $p := $pages -}}
+          {{- $idx := add $i 1 -}}
+
+          {{/* Варианты, когда вставляем отступ ПЕРЕД пунктом:
+                1) если явно задано во фронтматтере страницы: separator_before: true
+                2) если порядковый номер в "ручных" позициях $breaks
+                3) автоматически — если заголовок начинается с римской "Ⅱ " (вставить перед главой II)
+           */}}
+          {{- if or ($p.Params.separator_before) (in $breaks $idx) (findRE `^Ⅱ\b` $p.Title) -}}
+            <li class="list-separator"></li>
+          {{- end -}}
+
+          <li><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></li>
         {{- end -}}
       {{- else -}}
         <li><em>Скоро…</em></li>

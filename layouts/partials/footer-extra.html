@@ -119,3 +119,21 @@
   });
 })();
 </script>
+
+
+<script>
+(function () {
+  var details = document.querySelectorAll('details[data-persist="session"]');
+  details.forEach(function(d, i){
+    var key = 'details-open:' + (d.id || ('anon-' + i));
+    try {
+      var saved = sessionStorage.getItem(key);
+      if (saved === '1') d.setAttribute('open','');
+      if (saved === '0') d.removeAttribute('open');
+    } catch(e){}
+    d.addEventListener('toggle', function(){
+      try { sessionStorage.setItem(key, d.open ? '1' : '0'); } catch(e){}
+    });
+  });
+})();
+</script>
