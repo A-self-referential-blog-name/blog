@@ -440,3 +440,10 @@ main.main,
     padding-right: 1rem;
   }
 }
+
+
+
+/* БО́ЛЬШИЙ ОТСТУП после названия текста */
+.post-header .post-title {
+  margin-bottom: 2.5rem;  /* можно 3rem, если хочется ещё больше */
+}
