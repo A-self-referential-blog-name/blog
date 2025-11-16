@@ -447,3 +447,12 @@ main.main,
 .post-header .post-title {
   margin-bottom: 5rem;  /* можно 3rem, если хочется ещё больше */
 }
+
+
+
+@media (max-width: 600px) {
+  .post-single .post-content {
+    font-size: 0.95rem;   /* было 1rem — чуть меньше */
+    line-height: 1.6;     /* чуть более “воздушно” */
+  }
+}
