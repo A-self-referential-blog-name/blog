@@ -450,14 +450,13 @@ main.main,
 
 
 
-
-/* Небольшие одинаковые поля на телефонах (и портрет, и горизонталь) */
-@media (max-width: 900px) {
+/* Почти без боковых полей на телефонах в вертикали */
+@media (max-width: 600px) and (orientation: portrait) {
   .main,
   main.main,
   .post-single,
   .post-single .post-content {
-    padding-left: 0.3rem;  /* можно 0.2–0.5 по вкусу */
-    padding-right: 0.3rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
   }
 }
