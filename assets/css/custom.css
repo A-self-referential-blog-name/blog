@@ -256,20 +256,187 @@ html.light .main {
 
 
 
-
-/* Пробел-отступ внутри списка СиВС */
-#right-folder .list-separator {
-  list-style: none;
-  margin: 1.8rem 0; /* немного больше, чем строка */
+/* Базовая нормализация списка в правой колонке */
+#right-folder .sublist {
+  margin: 0;
   padding: 0;
+}
+#right-folder .sublist li {
+  margin: 0 0 .55rem 0;    /* обычный небольшой интервал между пунктами */
+  list-style: none;
+}
+
+/* Сепаратор-метка сама ничего не показывает */
+#right-folder .sublist li.list-separator {
+  display: none;           /* метка скрыта */
+}
+
+/* НАСТОЯЩИЙ ПРОМЕЖУТОК: даём отступ именно следующему пункту */
+#right-folder .sublist li.list-separator + li {
+  margin-top: 1.8rem !important;   /* ← меняй здесь: 2.0–3.5rem по вкусу */
+}
+
+
+/* ---------- Выравнивание отступа между названием списка и первым пунктом ---------- */
+#right-folder details > .sublist {
+  padding-top: 1rem; /* чтобы совпало с отступом слева */
+}
+
+
+
+/* Видимая строка '---' */
+#right-folder .sublist li.list-separator-visible {
+  display: list-item;
+  list-style: none;
+  color: #888;
+  text-align: left;      /* можно center */
+  letter-spacing: 0.08em;
+  margin-top: 1.2rem;    /* немного увеличиваем расстояние перед '---' */
+}
+
+
+
+
+/* Универсальный вертикальный зазор */
+.gap { display: block; height: var(--gap, 1rem); }
+
+
+
+
+
+html.dark,
+body.dark {
+  --primary: rgb(245, 245, 245);  /* основной текст */
+  --content: rgb(235, 235, 235);  /* чуть мягче для второстепенного */
 }
 
 
 
 
 
-#right-folder .list-separator {
-  list-style: none;
-  margin: 1.1rem 0;  /* высота отступа, можно подправить */
-  padding: 0;
+
+
+.sivs-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* обе стрелки: слева и справа */
+.sivs-nav--both {
+  justify-content: space-between;
+}
+
+/* только стрелка "назад" — слева */
+.sivs-nav--prev {
+  justify-content: flex-start;
+}
+
+/* только стрелка "вперёд" — справа */
+.sivs-nav--next {
+  justify-content: flex-end;
+}
+
+.sivs-nav-prev,
+.sivs-nav-next {
+  text-decoration: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 0.1rem 0.6rem;
+
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* выталкиваем стрелки дальше от текста на широких экранах */
+.sivs-nav-prev {
+  margin-left: -8rem;   /* было -3rem, теперь сильно левее */
+}
+
+.sivs-nav-next {
+  margin-right: -8rem;  /* симметрично вправо */
+}
+
+/* лёгкий hover-эффект */
+.sivs-nav-prev:hover,
+.sivs-nav-next:hover {
+  transform: translateY(-1px);
+}
+
+/* --- Специально для верхних стрелок в шапке СиВС --- */
+.sivs-header {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.sivs-header .sivs-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  margin-top: 0;
+}
+
+/* На узких экранах не выталкиваем слишком далеко, чтобы не уехало за край */
+@media (max-width: 900px) {
+  .sivs-nav-prev {
+    margin-left: -2rem;
+  }
+  .sivs-nav-next {
+    margin-right: -2rem;
+  }
+}
+
+
+
+
+
+.center-text {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.dedication {
+  font-style: italic;
+  margin-top: 0.5rem;
+  margin-bottom: 3rem; /* отступ вниз, чтобы не прилипало к следующему абзацу */
+}
+
+.dedication-right {
+  text-align: right;
+  font-style: italic;
+  margin-top: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+
+
+
+/* ---------- Более широкие страницы для всех текстов ---------- */
+
+/* Центральная колонка с текстом — до 1000px, по центру */
+main.main,
+.post-single,
+.post-single .post-content {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* На узких экранах — занимать всю ширину с небольшими полями */
+@media (max-width: 1000px) {
+  main.main,
+  .post-single,
+  .post-single .post-content {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }

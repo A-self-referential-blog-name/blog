@@ -1,0 +1,42 @@
+{{/* Навигация только для текстов СиВС */}}
+{{ if .Params.sivs }}
+
+  {{ $current := . }}
+  {{ $pages := where .Site.RegularPages "Params.sivs" true }}
+
+  {{ $scratch := newScratch }}
+  {{ $scratch.Set "prev" nil }}
+  {{ $scratch.Set "next" nil }}
+
+  {{ range $i, $p := $pages }}
+    {{ if eq $p.RelPermalink $current.RelPermalink }}
+      {{ if gt $i 0 }}
+        {{ $scratch.Set "prev" (index $pages (sub $i 1)) }}
+      {{ end }}
+      {{ if lt (add $i 1) (len $pages) }}
+        {{ $scratch.Set "next" (index $pages (add $i 1)) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ $prev := $scratch.Get "prev" }}
+  {{ $next := $scratch.Get "next" }}
+
+  {{ if or $prev $next }}
+    {{ if and $prev $next }}
+      <nav class="sivs-nav sivs-nav--both" aria-label="Навигация по СиВС">
+        <a class="sivs-nav-prev" href="{{ $prev.RelPermalink }}" aria-label="Предыдущий текст">←</a>
+        <a class="sivs-nav-next" href="{{ $next.RelPermalink }}" aria-label="Следующий текст">→</a>
+      </nav>
+    {{ else if $prev }}
+      <nav class="sivs-nav sivs-nav--prev" aria-label="Навигация по СиВС">
+        <a class="sivs-nav-prev" href="{{ $prev.RelPermalink }}" aria-label="Предыдущий текст">←</a>
+      </nav>
+    {{ else if $next }}
+      <nav class="sivs-nav sivs-nav--next" aria-label="Навигация по СиВС">
+        <a class="sivs-nav-next" href="{{ $next.RelPermalink }}" aria-label="Следующий текст">→</a>
+      </nav>
+    {{ end }}
+  {{ end }}
+
+{{ end }}

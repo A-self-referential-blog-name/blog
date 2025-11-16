@@ -1,11 +1,18 @@
 {{ define "main" }}
 <article class="post-single">
-  <header class="post-header">
-    <h1 class="post-title">{{ .Title }}</h1>
+  <header class="post-header{{ if .Params.sivs }} sivs-header{{ end }}">
+    {{ partial "sivs-nav.html" . }}
+
+    {{ if not .Params.sivs }}
+      <h1 class="post-title">{{ .Title }}</h1>
+    {{ end }}
   </header>
 
   <div class="post-content">
     {{ .Content }}
+
+    {{ partial "sivs-nav.html" . }}
   </div>
 </article>
 {{ end }}
+

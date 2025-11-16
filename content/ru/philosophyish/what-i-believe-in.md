@@ -4,7 +4,6 @@ weight: 2
 slug: "what-i-believe-in"
 ---
 
-
 ---
 
 У меня было (с 2015) 2 вопроса:  

@@ -10,21 +10,30 @@
         {{- $pages = $pages.ByWeight -}}
 
         {{/* Позиции, ПЕРЕД которыми вставляем отступ (можно править этот список) */}}
-        {{- $breaks := slice 1 2 8 14 20 26 -}}
+        {{- $breaks := slice 2 3 9 15 21 27 33 -}}
 
+        {{- $lastIdx := len $pages -}}
         {{- range $i, $p := $pages -}}
           {{- $idx := add $i 1 -}}
 
-          {{/* Варианты, когда вставляем отступ ПЕРЕД пунктом:
-                1) если явно задано во фронтматтере страницы: separator_before: true
-                2) если порядковый номер в "ручных" позициях $breaks
-                3) автоматически — если заголовок начинается с римской "Ⅱ " (вставить перед главой II)
-           */}}
+          {{/* ТЕХНИЧЕСКИЕ разделители по твоим правилам (скрытые, дают отступ следующему пункту) */}}
           {{- if or ($p.Params.separator_before) (in $breaks $idx) (findRE `^Ⅱ\b` $p.Title) -}}
             <li class="list-separator"></li>
           {{- end -}}
 
+          {{/* ВИДИМЫЙ разделитель ПЕРЕД ПОСЛЕДНИМ пунктом */}}
+          {{- if eq $idx $lastIdx -}}
+            <li class="list-separator list-separator-visible">---</li>
+          {{- end -}}
+
+          {{/* Сам пункт списка */}}
           <li><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></li>
+
+          {{/* ВИДИМЫЙ разделитель ПОСЛЕ ПЕРВОГО пункта */}}
+          {{- if eq $idx 1 -}}
+            <li class="list-separator list-separator-visible">---</li>
+          {{- end -}}
+
         {{- end -}}
       {{- else -}}
         <li><em>Скоро…</em></li>
