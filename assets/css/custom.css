@@ -77,14 +77,8 @@ html.dark details[open] > :not(summary) {
 
 
 
-
-
-
-
-
-
-/* ---------- Адаптация под мобильные устройства ---------- */
-@media (max-width: 768px) {
+/* ---------- Адаптация под мобильные устройства (портрет) ---------- */
+@media (max-width: 768px) and (orientation: portrait) {
   .columns-wrapper {
     display: flex;
     flex-direction: column;
@@ -106,9 +100,11 @@ html.dark details[open] > :not(summary) {
     margin-bottom: 1rem;
   }
 
+  /* логотип: влезает в одну строку */
   .logo {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     padding-left: 0.5rem;
+    white-space: nowrap; /* не переносить название на 2 строку */
   }
 
   .header nav {
@@ -134,7 +130,7 @@ html.dark details[open] > :not(summary) {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .column {
     margin-bottom: 3rem; /* увеличенный отступ между "колонками" */
   }
@@ -145,7 +141,7 @@ html.dark details[open] > :not(summary) {
   margin-top: 4rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .columns-wrapper {
     margin-top: 2.5rem;
   }
@@ -157,12 +153,9 @@ html.dark .main {
   color: #f5f5f5;
 }
 
-
 html.light .column a {
   color: #111; /* почти чёрный */
 }
-
-
 
 html.light,
 html.light body,
@@ -170,8 +163,6 @@ html.light .main {
   background-color: #f4f4f4 !important;  /* немного серее белого */
   color: #111 !important;                /* почти чёрный текст */
 }
-
-
 
 
 
@@ -254,8 +245,6 @@ html.light .main {
 
 
 
-
-
 /* Базовая нормализация списка в правой колонке */
 #right-folder .sublist {
   margin: 0;
@@ -295,12 +284,8 @@ html.light .main {
 }
 
 
-
-
 /* Универсальный вертикальный зазор */
 .gap { display: block; height: var(--gap, 1rem); }
-
-
 
 
 
@@ -312,10 +297,7 @@ body.dark {
 
 
 
-
-
-
-
+/* ---------- Навигация СиВС ---------- */
 .sivs-nav {
   display: flex;
   align-items: center;
@@ -396,8 +378,7 @@ body.dark {
 
 
 
-
-
+/* Центровка и посвящения */
 .center-text {
   text-align: center;
   margin: 1rem 0;
@@ -415,7 +396,6 @@ body.dark {
   margin-top: 0.5rem;
   margin-bottom: 3rem;
 }
-
 
 
 
@@ -443,20 +423,7 @@ main.main,
 
 
 
-/* БО́ЛЬШИЙ ОТСТУП после названия текста */
+/* Бо́льший отступ после названия текста */
 .post-header .post-title {
-  margin-bottom: 5rem;  /* можно 3rem, если хочется ещё больше */
-}
-
-
-
-/* Почти без боковых полей на телефонах в вертикали */
-@media (max-width: 600px) and (orientation: portrait) {
-  .main,
-  main.main,
-  .post-single,
-  .post-single .post-content {
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
-  }
+  margin-bottom: 5rem;  /* можно 3rem, если захочешь меньше */
 }
