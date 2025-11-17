@@ -75,6 +75,13 @@ html.dark details[open] > :not(summary) {
   font-size: 1.25rem; /* или 20px, если хочешь явно */
 }
 
+/* запрет горизонтального скролла и “уезжания” вправо/влево */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 
 
 /* ---------- Адаптация под мобильные устройства (портрет) ---------- */
@@ -425,5 +432,30 @@ main.main,
 
 /* Бо́льший отступ после названия текста */
 .post-header .post-title {
-  margin-bottom: 5rem;  /* можно 3rem, если захочешь меньше */
+  margin-bottom: 4rem;  /* можно 3rem, если захочешь меньше */
+}
+
+
+
+/* Мобильный портрет: меньше поля и шрифт поменьше для текста */
+@media (max-width: 600px) and (orientation: portrait) {
+
+  /* Горизонтальный отступ задаём только у main */
+  main.main {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* Внутренние контейнеры без дополнительных полей */
+  .post-single,
+  .post-single .post-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Чуть меньше шрифт и комфортный интерлиньяж в тексте */
+  .post-single .post-content {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
 }
