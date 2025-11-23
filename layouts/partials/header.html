@@ -11,17 +11,10 @@
       </a>
     </div>
 
-
-<div class="nav-center"></div>
-
+    <div class="nav-center"></div>
 
     <!-- ПРАВО -->
     <div class="nav-right" style="display:flex;align-items:center;gap:1rem;">
-      <a href="{{ site.Home.RelPermalink }}" accesskey="h">
-        <span {{ if eq .RelPermalink site.Home.RelPermalink }}class="active"{{ end }}>
-          Home
-        </span>
-      </a>
 
       <ul id="menu" style="display:flex;gap:1rem;margin:0;list-style:none;padding:0;">
         {{ range site.Menus.main }}
