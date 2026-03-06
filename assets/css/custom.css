@@ -459,3 +459,175 @@ main.main,
     line-height: 1.5;
   }
 }
+
+
+
+
+
+/* --- Сноски: убрать подчёркивание и сделать цифры жирными --- */
+sup a,
+sup a:link,
+sup a:visited {
+  text-decoration: none !important;   /* без подчёркивания */
+  border-bottom: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+  font-weight: 700;                   /* ЖИРНЫЕ цифры */
+}
+
+sup a:hover,
+sup a:focus {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  font-weight: 700;
+}
+
+
+
+.quote {
+  font-style: italic;
+}
+
+.quote-author {
+  font-style: normal;
+  text-align: right;
+  margin-top: 0.75rem;
+}
+
+
+
+
+
+
+
+/* По умолчанию переносы выключены (но длинные слова не ломают вёрстку) */
+.post-single .post-content p,
+.quote {
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  overflow-wrap: break-word;
+}
+
+/* На мобильных (узкие экраны) включаем автоматические переносы */
+@media (max-width: 768px) {
+  .post-single .post-content p,
+  .quote {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- СиВС: главы, заголовки, отступы ---------- */
+
+/* Весь контент главы */
+.sivs-chapter {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 4rem;   /* расстояние от стрелок до названия главы */
+}
+
+/* Заголовок главы (например, "4. Стена из высоких снов") */
+.sivs-chapter-title h1 {
+  text-align: center;
+  font-size: 2.6rem;     /* чуть крупнее обычного заголовка */
+  font-weight: 700;
+  margin: 0 0 10rem 0;   /* отступ вниз от названия до названия волны */
+}
+
+/* Подзаголовок волны ("Неоднозначный союзник") */
+.post-single .post-content .sivs-section-heading {
+  font-size: 1.3rem !important;  /* размер текста названия волны */
+  font-weight: 600;              /* НЕ жирный */
+  font-style: italic;            /* курсив */
+  margin: 0 0 1.2rem 0;
+}
+
+/* Краткое описание персонажа / волны */
+.sivs-section p {
+  margin: 0 0 2.2rem 0;
+}
+
+/* Горизонтальные линии внутри текста СиВС */
+.post-single .post-content .sivs-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, .08);
+  margin: 5.5rem 0 !important;   /* отступы от линий до цитат и текста */
+}
+
+/* Цитаты: без базовых внешних отступов */
+.sivs-quote-block {
+  margin: 0;
+}
+
+/* Увеличенный отступ ТОЛЬКО между двумя подряд идущими цитатами */
+.sivs-quote-block + .sivs-quote-block {
+  margin-top: 5rem;              /* расстояние МЕЖДУ цитатами */
+}
+
+.sivs-quote-block .quote {
+  font-style: italic;
+  margin: 0 0 1rem 0;
+}
+
+.sivs-quote-block .quote-author {
+  text-align: right;
+  margin: 0;
+}
+
+/* "Короткие" цитаты: блок прижат к правому краю,
+   ширина по содержимому, автор под цитатой справа */
+.sivs-quote-block-short {
+  display: block;
+  width: fit-content;    /* ширина = ширине текста цитаты */
+  margin: 0 0 0 auto;    /* сдвиг блока к правому краю контейнера */
+}
+
+.sivs-quote-block-short .quote-author {
+  text-align: right;     /* подпись под цитатой справа */
+  margin-top: 0.5rem;
+}
+
+
+
+/* Основной текст главы между линиями */
+.sivs-body {
+  margin: 3rem 0;
+}
+
+/* Последняя цитата в конце главы — небольшой зазор от линии/футера */
+.sivs-final-quote {
+  margin-top: 3rem;
+}
+
+/* Прячем стандартный заголовок PaperMod
+   для страниц, где есть .sivs-chapter */
+.post-single:has(.sivs-chapter) .post-header .post-title {
+  display: none;
+}
+
+

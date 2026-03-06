@@ -1,0 +1,83 @@
+<div class="sivs-chapter">
+
+  <!-- Заголовок главы -->
+  <div class="sivs-chapter-title">
+    <h1>{{ .Get "title" | safeHTML }}</h1>
+  </div>
+
+  <!-- Блок с волной и описанием -->
+  {{ with .Get "wave" }}
+    <section class="sivs-section">
+      <h2 class="sivs-section-heading">{{ . }}</h2>
+      {{ with $.Get "wave_desc" }}
+        <p>{{ . }}</p>
+      {{ end }}
+    </section>
+  {{ end }}
+
+  <hr class="sivs-separator">
+
+  <!-- Первая цитата -->
+  {{ with .Get "firstquote" }}
+    {{ $isFirstShort := eq ($.Get "firstquote_short") "true" }}
+    <div class="sivs-quote-block{{ if $isFirstShort }} sivs-quote-block-short{{ end }}">
+      <p class="quote">{{ . | safeHTML }}</p>
+      {{ with $.Get "firstauthor" }}
+        <p class="quote-author">{{ . }}</p>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  <!-- Вторая цитата -->
+  {{ with .Get "secondquote" }}
+    {{ $isSecondShort := eq ($.Get "secondquote_short") "true" }}
+    <div class="sivs-quote-block{{ if $isSecondShort }} sivs-quote-block-short{{ end }}">
+      <p class="quote">{{ . | safeHTML }}</p>
+      {{ with $.Get "secondauthor" }}
+        <p class="quote-author">{{ . }}</p>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  <!-- Третья цитата (дополнительная, перед текстом) -->
+  {{ with .Get "thirdquote" }}
+    {{ $isThirdShort := eq ($.Get "thirdquote_short") "true" }}
+    <div class="sivs-quote-block{{ if $isThirdShort }} sivs-quote-block-short{{ end }}">
+      <p class="quote">{{ . | safeHTML }}</p>
+      {{ with $.Get "thirdauthor" }}
+        <p class="quote-author">{{ . }}</p>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  <!-- Четвёртая цитата -->
+  {{ with .Get "fourthquote" }}
+    {{ $isFourthShort := eq ($.Get "fourthquote_short") "true" }}
+    <div class="sivs-quote-block{{ if $isFourthShort }} sivs-quote-block-short{{ end }}">
+      <p class="quote">{{ . | safeHTML }}</p>
+      {{ with $.Get "fourthauthor" }}
+        <p class="quote-author">{{ . }}</p>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  <hr class="sivs-separator">
+
+  <!-- Основной текст главы -->
+  <div class="sivs-body">
+    {{ .Inner | markdownify }}
+  </div>
+
+  <!-- Последняя цитата + линия перед ней — ТОЛЬКО если lastquote есть -->
+  {{ with .Get "lastquote" }}
+    <hr class="sivs-separator">
+    {{ $isLastShort := eq ($.Get "lastquote_short") "true" }}
+    <div class="sivs-quote-block sivs-final-quote{{ if $isLastShort }} sivs-quote-block-short{{ end }}">
+      <p class="quote">{{ . | safeHTML }}</p>
+      {{ with $.Get "lastauthor" }}
+        <p class="quote-author">{{ . }}</p>
+      {{ end }}
+    </div>
+  {{ end }}
+
+</div>
