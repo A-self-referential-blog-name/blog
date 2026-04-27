@@ -1,82 +1,177 @@
 <div class="sivs-chapter">
 
-  <!-- Заголовок главы -->
+  {{ $titleSource := .Get "title" | default "" }}
+
+  {{ $hideSeparators := eq (.Get "hide_separators") "true" }}
+
+  {{ $waveSource := .Get "wave" | default "" }}
+  {{ $waveDescSource := .Get "wave_desc" | default "" }}
+  {{ $firstQuoteSource := .Get "firstquote" | default "" }}
+  {{ $secondQuoteSource := .Get "secondquote" | default "" }}
+  {{ $thirdQuoteSource := .Get "thirdquote" | default "" }}
+  {{ $fourthQuoteSource := .Get "fourthquote" | default "" }}
+  {{ $lastQuoteSource := .Get "lastquote" | default "" }}
+
+  {{ $markerTitle := `<div class="sivs-render-split" data-part="title"></div>` }}
+  {{ $markerWaveTitle := `<div class="sivs-render-split" data-part="wave_title"></div>` }}
+  {{ $markerWaveDesc := `<div class="sivs-render-split" data-part="wave_desc"></div>` }}
+  {{ $markerFirst := `<div class="sivs-render-split" data-part="firstquote"></div>` }}
+  {{ $markerSecond := `<div class="sivs-render-split" data-part="secondquote"></div>` }}
+  {{ $markerThird := `<div class="sivs-render-split" data-part="thirdquote"></div>` }}
+  {{ $markerFourth := `<div class="sivs-render-split" data-part="fourthquote"></div>` }}
+  {{ $markerBody := `<div class="sivs-render-split" data-part="body"></div>` }}
+  {{ $markerLast := `<div class="sivs-render-split" data-part="lastquote"></div>` }}
+
+  {{ $combinedSource := print
+      $markerTitle "\n\n# " $titleSource "\n\n"
+      $markerWaveTitle "\n\n## " $waveSource "\n\n"
+      $markerWaveDesc "\n\n" $waveDescSource "\n\n"
+      $markerFirst "\n\n" $firstQuoteSource "\n\n"
+      $markerSecond "\n\n" $secondQuoteSource "\n\n"
+      $markerThird "\n\n" $thirdQuoteSource "\n\n"
+      $markerFourth "\n\n" $fourthQuoteSource "\n\n"
+      $markerBody "\n\n" .Inner "\n\n"
+      $markerLast "\n\n" $lastQuoteSource
+  }}
+
+  {{ $renderedCombined := .Page.RenderString (dict "display" "block") $combinedSource }}
+
+  {{ $footnotesHTML := "" }}
+  {{ $renderedWithoutFootnotes := $renderedCombined }}
+
+  {{ if or (in $renderedCombined `<div class="footnotes"`) (in $renderedCombined `<section class="footnotes"`) }}
+    {{ $footnotesHTML = replaceRE `(?s)^.*?(<(div|section) class="footnotes".*)$` `${1}` $renderedCombined }}
+    {{ $renderedWithoutFootnotes = replaceRE `(?s)<(div|section) class="footnotes".*$` `` $renderedCombined }}
+  {{ end }}
+
+  {{ $partsAfterTitleMarker := split $renderedWithoutFootnotes $markerTitle }}
+  {{ $afterTitleMarker := delimit (after 1 $partsAfterTitleMarker) $markerTitle }}
+
+  {{ $titleSplit := split $afterTitleMarker $markerWaveTitle }}
+  {{ $titleHTMLRaw := index $titleSplit 0 }}
+  {{ $afterWaveTitleMarker := delimit (after 1 $titleSplit) $markerWaveTitle }}
+
+  {{ $waveTitleSplit := split $afterWaveTitleMarker $markerWaveDesc }}
+  {{ $waveTitleHTMLRaw := index $waveTitleSplit 0 }}
+  {{ $afterWaveDescMarker := delimit (after 1 $waveTitleSplit) $markerWaveDesc }}
+
+  {{ $waveDescSplit := split $afterWaveDescMarker $markerFirst }}
+  {{ $waveDescHTML := index $waveDescSplit 0 }}
+  {{ $afterFirstMarker := delimit (after 1 $waveDescSplit) $markerFirst }}
+
+  {{ $firstSplit := split $afterFirstMarker $markerSecond }}
+  {{ $firstQuoteHTMLRaw := index $firstSplit 0 }}
+  {{ $afterSecondMarker := delimit (after 1 $firstSplit) $markerSecond }}
+
+  {{ $secondSplit := split $afterSecondMarker $markerThird }}
+  {{ $secondQuoteHTMLRaw := index $secondSplit 0 }}
+  {{ $afterThirdMarker := delimit (after 1 $secondSplit) $markerThird }}
+
+  {{ $thirdSplit := split $afterThirdMarker $markerFourth }}
+  {{ $thirdQuoteHTMLRaw := index $thirdSplit 0 }}
+  {{ $afterFourthMarker := delimit (after 1 $thirdSplit) $markerFourth }}
+
+  {{ $fourthSplit := split $afterFourthMarker $markerBody }}
+  {{ $fourthQuoteHTMLRaw := index $fourthSplit 0 }}
+  {{ $afterBodyMarker := delimit (after 1 $fourthSplit) $markerBody }}
+
+  {{ $bodySplit := split $afterBodyMarker $markerLast }}
+  {{ $bodyHTML := index $bodySplit 0 }}
+  {{ $lastQuoteHTMLRaw := delimit (after 1 $bodySplit) $markerLast }}
+
+  {{ $titleHTML := replaceRE `(?s)^\s*<h1[^>]*>(.*)</h1>\s*$` `${1}` $titleHTMLRaw }}
+  {{ $waveTitleHTML := replaceRE `(?s)^\s*<h2[^>]*>(.*)</h2>\s*$` `${1}` $waveTitleHTMLRaw }}
+  {{ $firstQuoteHTML := replaceRE `(?s)^\s*<p>(.*)</p>\s*$` `${1}` $firstQuoteHTMLRaw }}
+  {{ $secondQuoteHTML := replaceRE `(?s)^\s*<p>(.*)</p>\s*$` `${1}` $secondQuoteHTMLRaw }}
+  {{ $thirdQuoteHTML := replaceRE `(?s)^\s*<p>(.*)</p>\s*$` `${1}` $thirdQuoteHTMLRaw }}
+  {{ $fourthQuoteHTML := replaceRE `(?s)^\s*<p>(.*)</p>\s*$` `${1}` $fourthQuoteHTMLRaw }}
+  {{ $lastQuoteHTML := replaceRE `(?s)^\s*<p>(.*)</p>\s*$` `${1}` $lastQuoteHTMLRaw }}
+
   <div class="sivs-chapter-title">
-    <h1>{{ .Get "title" | safeHTML }}</h1>
+    <h1>{{ $titleHTML | safeHTML }}</h1>
   </div>
 
-  <!-- Блок с волной и описанием -->
-  {{ with .Get "wave" }}
+  {{ with $waveSource }}
     <section class="sivs-section">
-      <h2 class="sivs-section-heading">{{ . }}</h2>
-      {{ with $.Get "wave_desc" }}
-        <p>{{ . }}</p>
+      <h2 class="sivs-section-heading">{{ $waveTitleHTML | safeHTML }}</h2>
+      {{ with $waveDescSource }}
+        <div class="sivs-section-desc">
+          {{ $waveDescHTML | safeHTML }}
+        </div>
       {{ end }}
     </section>
   {{ end }}
 
-  <hr class="sivs-separator">
-
-  <!-- Первая цитата -->
-  {{ with .Get "firstquote" }}
-    {{ $isFirstShort := eq ($.Get "firstquote_short") "true" }}
-    <div class="sivs-quote-block{{ if $isFirstShort }} sivs-quote-block-short{{ end }}">
-      <p class="quote">{{ . | safeHTML }}</p>
-      {{ with $.Get "firstauthor" }}
-        <p class="quote-author">{{ . }}</p>
-      {{ end }}
-    </div>
+  {{ if not $hideSeparators }}
+    <hr class="sivs-separator sivs-separator-top">
   {{ end }}
 
-  <!-- Вторая цитата -->
-  {{ with .Get "secondquote" }}
-    {{ $isSecondShort := eq ($.Get "secondquote_short") "true" }}
-    <div class="sivs-quote-block{{ if $isSecondShort }} sivs-quote-block-short{{ end }}">
-      <p class="quote">{{ . | safeHTML }}</p>
-      {{ with $.Get "secondauthor" }}
-        <p class="quote-author">{{ . }}</p>
-      {{ end }}
-    </div>
-  {{ end }}
+  <div class="sivs-prebody-quotes">
 
-  <!-- Третья цитата (дополнительная, перед текстом) -->
-  {{ with .Get "thirdquote" }}
-    {{ $isThirdShort := eq ($.Get "thirdquote_short") "true" }}
-    <div class="sivs-quote-block{{ if $isThirdShort }} sivs-quote-block-short{{ end }}">
-      <p class="quote">{{ . | safeHTML }}</p>
-      {{ with $.Get "thirdauthor" }}
-        <p class="quote-author">{{ . }}</p>
-      {{ end }}
-    </div>
-  {{ end }}
+    {{ with $firstQuoteSource }}
+      {{ $isFirstShort := eq ($.Get "firstquote_short") "true" }}
+      <div class="sivs-quote-block{{ if $isFirstShort }} sivs-quote-block-short{{ end }}">
+        <div class="quote">{{ $firstQuoteHTML | safeHTML }}</div>
+        {{ with $.Get "firstauthor" }}
+          <p class="quote-author">{{ . }}</p>
+        {{ end }}
+      </div>
+    {{ end }}
 
-  <!-- Четвёртая цитата -->
-  {{ with .Get "fourthquote" }}
-    {{ $isFourthShort := eq ($.Get "fourthquote_short") "true" }}
-    <div class="sivs-quote-block{{ if $isFourthShort }} sivs-quote-block-short{{ end }}">
-      <p class="quote">{{ . | safeHTML }}</p>
-      {{ with $.Get "fourthauthor" }}
-        <p class="quote-author">{{ . }}</p>
-      {{ end }}
-    </div>
-  {{ end }}
+    {{ with $secondQuoteSource }}
+      {{ $isSecondShort := eq ($.Get "secondquote_short") "true" }}
+      <div class="sivs-quote-block{{ if $isSecondShort }} sivs-quote-block-short{{ end }}">
+        <div class="quote">{{ $secondQuoteHTML | safeHTML }}</div>
+        {{ with $.Get "secondauthor" }}
+          <p class="quote-author">{{ . }}</p>
+        {{ end }}
+      </div>
+    {{ end }}
 
-  <hr class="sivs-separator">
+    {{ with $thirdQuoteSource }}
+      {{ $isThirdShort := eq ($.Get "thirdquote_short") "true" }}
+      <div class="sivs-quote-block{{ if $isThirdShort }} sivs-quote-block-short{{ end }}">
+        <div class="quote">{{ $thirdQuoteHTML | safeHTML }}</div>
+        {{ with $.Get "thirdauthor" }}
+          <p class="quote-author">{{ . }}</p>
+        {{ end }}
+      </div>
+    {{ end }}
 
-  <!-- Основной текст главы -->
-  <div class="sivs-body">
-    {{ .Inner | markdownify }}
+    {{ with $fourthQuoteSource }}
+      {{ $isFourthShort := eq ($.Get "fourthquote_short") "true" }}
+      <div class="sivs-quote-block{{ if $isFourthShort }} sivs-quote-block-short{{ end }}">
+        <div class="quote">{{ $fourthQuoteHTML | safeHTML }}</div>
+        {{ with $.Get "fourthauthor" }}
+          <p class="quote-author">{{ . }}</p>
+        {{ end }}
+      </div>
+    {{ end }}
+
   </div>
 
-  <!-- Последняя цитата + линия перед ней — ТОЛЬКО если lastquote есть -->
-  {{ with .Get "lastquote" }}
-    <hr class="sivs-separator">
+  {{ if not $hideSeparators }}
+    <hr class="sivs-separator sivs-separator-before-body">
+  {{ end }}
+
+  <div class="sivs-body">
+    {{ $bodyHTML | safeHTML }}
+  </div>
+
+  {{ with $lastQuoteSource }}
+    <hr class="sivs-separator sivs-separator-before-lastquote">
     {{ $isLastShort := eq ($.Get "lastquote_short") "true" }}
     <div class="sivs-quote-block sivs-final-quote{{ if $isLastShort }} sivs-quote-block-short{{ end }}">
-      <p class="quote">{{ . | safeHTML }}</p>
+      <div class="quote">{{ $lastQuoteHTML | safeHTML }}</div>
       {{ with $.Get "lastauthor" }}
         <p class="quote-author">{{ . }}</p>
       {{ end }}
+    </div>
+  {{ end }}
+
+  {{ with $footnotesHTML }}
+    <div class="sivs-footnotes-after-lastquote">
+      {{ . | safeHTML }}
     </div>
   {{ end }}
 

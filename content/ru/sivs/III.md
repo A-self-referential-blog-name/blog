@@ -10,7 +10,7 @@ sivs_order: 15
 
     title="ⅠⅠⅠ. Странный порядок вещей"
 
-    wave="Другой замок"
+    wave="Другой замок [^castle]"
 
     wave_desc="..."
 
@@ -20,7 +20,7 @@ sivs_order: 15
     secondquote=`"It is hard to avoid the nagging feeling, however, that there must be something ... that lies somehow in between the causes of consciousness and its effects."`
     secondauthor="Д. Деннет"
 
-    thirdquote=`"None of us really knows what’s going on in our strange situation of reality"`
+    thirdquote=`"None of us really knows what’s going on in our strange situation of reality" [^c]`
     thirdauthor="Дж. Ланье"   
 >}}
 
@@ -29,5 +29,16 @@ sivs_order: 15
 ТЕКСТ
 
 ТЕКСТ
+
+
+
+
+[^c]: Кох говорит, что "сознание предшествует физике".  
+Как я понял эту цитату Деннета, он говорит, что "трудно избавиться от этого ноющего ощущения, что есть что-то между причинами сознания и его эффектами". Что есть "между причинами сознания и его эффектами"? Собственно, сознание; наш субъективный опыт от рождения до смерти; наша жизнь. Действительно сложно избавиться от этого ощущения.  
+Цитата Ланье суммирует это, постулируя, что нифига непонятно.  
+*Эти цитаты — несколько нежелательный спойлер ко всей III части.*
+
+[^castle]: Без всяких объяснений возле Замка появляется другой замок — зловещий, с острыми башнями. (Убрать этот комментарий позже.)
+
 
 {{< /sivs-chapter >}}

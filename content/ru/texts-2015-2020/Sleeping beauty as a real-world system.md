@@ -6,6 +6,8 @@ draft: false
 
 Этот текст, изначально написанный в 2020, превратил в 2025 в статью (см. ниже) и неудачно пытался подать в журналы. Т.к. я ни с кем не смог его обсудить, просто выкладываю здесь. 
 
+Этот текст является единственным из выложенных здесь текстов, который не носит для меня личный/экзистенциальный характер. 
+
 ---
 
 **Abstract**: The article proposes an explanation of why the answer to the Sleeping Beauty problem is 1/3, by considering Sleeping Beauty as a real-world system [^1] composed of parts. 

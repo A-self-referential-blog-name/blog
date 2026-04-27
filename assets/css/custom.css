@@ -72,7 +72,7 @@ html.dark details[open] > :not(summary) {
 
 .logo {
   font-weight: 700;
-  font-size: 1.25rem; /* или 20px, если хочешь явно */
+  font-size: 1.25rem;
 }
 
 /* запрет горизонтального скролла и “уезжания” вправо/влево */
@@ -82,14 +82,12 @@ body {
   overflow-x: hidden;
 }
 
-
-
 /* ---------- Адаптация под мобильные устройства (портрет) ---------- */
 @media (max-width: 768px) and (orientation: portrait) {
   .columns-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 5rem; /* 🔺 БОЛЬШОЙ отступ между колонками */
+    gap: 5rem;
     align-items: flex-start;
     margin-left: 0 !important;
     padding-left: 1rem !important;
@@ -107,11 +105,10 @@ body {
     margin-bottom: 1rem;
   }
 
-  /* логотип: влезает в одну строку */
   .logo {
     font-size: 0.95rem;
     padding-left: 0.5rem;
-    white-space: nowrap; /* не переносить название на 2 строку */
+    white-space: nowrap;
   }
 
   .header nav {
@@ -139,7 +136,7 @@ body {
 
 @media (max-width: 768px) and (orientation: portrait) {
   .column {
-    margin-bottom: 3rem; /* увеличенный отступ между "колонками" */
+    margin-bottom: 3rem;
   }
 }
 
@@ -154,32 +151,28 @@ body {
   }
 }
 
-
-
 html.dark .main {
   color: #f5f5f5;
 }
 
 html.light .column a {
-  color: #111; /* почти чёрный */
+  color: #111;
 }
 
 html.light,
 html.light body,
 html.light .main {
-  background-color: #f4f4f4 !important;  /* немного серее белого */
-  color: #111 !important;                /* почти чёрный текст */
+  background-color: #f4f4f4 !important;
+  color: #111 !important;
 }
-
-
 
 /* ---------- Email link in header ---------- */
 .contact-email {
   position: relative;
   display: inline-flex;
   align-items: center;
-  font-size: .9rem;
-  opacity: .9;
+  font-size: 0.9rem;
+  opacity: 0.9;
   white-space: nowrap;
 }
 
@@ -187,13 +180,11 @@ html.light .main {
   opacity: 1;
 }
 
-/* Подчёркнутая надпись email */
 .contact-email .email-link {
   text-decoration: underline dotted;
   cursor: pointer;
 }
 
-/* Tooltip (всплывашка) */
 .contact-email .tooltiptext {
   position: absolute;
   top: 1.8em;
@@ -201,19 +192,18 @@ html.light .main {
   transform: translateX(-50%);
   background: rgba(30, 30, 30, 0.96);
   color: #fff;
-  padding: .38rem .55rem;
+  padding: 0.38rem 0.55rem;
   border-radius: 6px;
-  font-size: .9rem;
+  font-size: 0.9rem;
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   box-shadow: 0 4px 12px rgba(0,0,0,.25);
-  transition: opacity .18s ease, visibility .18s ease, transform .18s ease;
+  transition: opacity 0.18s ease, visibility 0.18s ease, transform 0.18s ease;
   z-index: 50;
 }
 
-/* Маленькая стрелочка */
 .contact-email .tooltiptext::after {
   content: "";
   position: absolute;
@@ -224,7 +214,6 @@ html.light .main {
   border-bottom-color: rgba(30,30,30,.96);
 }
 
-/* Показать tooltip */
 .contact-email:hover .tooltiptext,
 .contact-email .tooltiptext.show {
   opacity: 1;
@@ -232,17 +221,16 @@ html.light .main {
   transform: translate(-50%, 0);
 }
 
-/* "copied!" badge справа */
 .contact-email .copied-badge {
-  margin-left: .45rem;
+  margin-left: 0.45rem;
   background: #18a957;
   color: #fff;
-  font-size: .78rem;
-  padding: .15rem .4rem;
+  font-size: 0.78rem;
+  padding: 0.15rem 0.4rem;
   border-radius: 4px;
   opacity: 0;
   transform: translateY(-2px);
-  transition: opacity .18s ease, transform .18s ease;
+  transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
 .contact-email .copied-badge.show {
@@ -250,59 +238,51 @@ html.light .main {
   transform: translateY(0);
 }
 
-
-
 /* Базовая нормализация списка в правой колонке */
 #right-folder .sublist {
   margin: 0;
   padding: 0;
 }
+
 #right-folder .sublist li {
-  margin: 0 0 .55rem 0;    /* обычный небольшой интервал между пунктами */
+  margin: 0 0 0.55rem 0;
   list-style: none;
 }
 
-/* Сепаратор-метка сама ничего не показывает */
 #right-folder .sublist li.list-separator {
-  display: none;           /* метка скрыта */
+  display: none;
 }
 
-/* НАСТОЯЩИЙ ПРОМЕЖУТОК: даём отступ именно следующему пункту */
 #right-folder .sublist li.list-separator + li {
-  margin-top: 1.8rem !important;   /* ← меняй здесь: 2.0–3.5rem по вкусу */
+  margin-top: 1.8rem !important;
 }
-
 
 /* ---------- Выравнивание отступа между названием списка и первым пунктом ---------- */
 #right-folder details > .sublist {
-  padding-top: 1rem; /* чтобы совпало с отступом слева */
+  padding-top: 1rem;
 }
-
-
 
 /* Видимая строка '---' */
 #right-folder .sublist li.list-separator-visible {
   display: list-item;
   list-style: none;
   color: #888;
-  text-align: left;      /* можно center */
+  text-align: left;
   letter-spacing: 0.08em;
-  margin-top: 1.2rem;    /* немного увеличиваем расстояние перед '---' */
+  margin-top: 1.2rem;
 }
 
-
 /* Универсальный вертикальный зазор */
-.gap { display: block; height: var(--gap, 1rem); }
-
-
+.gap {
+  display: block;
+  height: var(--gap, 1rem);
+}
 
 html.dark,
 body.dark {
-  --primary: rgb(245, 245, 245);  /* основной текст */
-  --content: rgb(235, 235, 235);  /* чуть мягче для второстепенного */
+  --primary: rgb(245, 245, 245);
+  --content: rgb(235, 235, 235);
 }
-
-
 
 /* ---------- Навигация СиВС ---------- */
 .sivs-nav {
@@ -312,17 +292,14 @@ body.dark {
   margin-top: 2rem;
 }
 
-/* обе стрелки: слева и справа */
 .sivs-nav--both {
   justify-content: space-between;
 }
 
-/* только стрелка "назад" — слева */
 .sivs-nav--prev {
   justify-content: flex-start;
 }
 
-/* только стрелка "вперёд" — справа */
 .sivs-nav--next {
   justify-content: flex-end;
 }
@@ -333,26 +310,22 @@ body.dark {
   border: none !important;
   box-shadow: none !important;
   background-image: none !important;
-
   cursor: pointer;
   font-size: 1.8rem;
   font-weight: 600;
   padding: 0.1rem 0.6rem;
-
   margin-left: 0;
   margin-right: 0;
 }
 
-/* выталкиваем стрелки дальше от текста на широких экранах */
 .sivs-nav-prev {
-  margin-left: -8rem;   /* было -3rem, теперь сильно левее */
+  margin-left: -8rem;
 }
 
 .sivs-nav-next {
-  margin-right: -8rem;  /* симметрично вправо */
+  margin-right: -8rem;
 }
 
-/* лёгкий hover-эффект */
 .sivs-nav-prev:hover,
 .sivs-nav-next:hover {
   transform: translateY(-1px);
@@ -373,7 +346,6 @@ body.dark {
   margin-top: 0;
 }
 
-/* На узких экранах не выталкиваем слишком далеко, чтобы не уехало за край */
 @media (max-width: 900px) {
   .sivs-nav-prev {
     margin-left: -2rem;
@@ -382,8 +354,6 @@ body.dark {
     margin-right: -2rem;
   }
 }
-
-
 
 /* Центровка и посвящения */
 .center-text {
@@ -394,7 +364,7 @@ body.dark {
 .dedication {
   font-style: italic;
   margin-top: 0.5rem;
-  margin-bottom: 3rem; /* отступ вниз, чтобы не прилипало к следующему абзацу */
+  margin-bottom: 3rem;
 }
 
 .dedication-right {
@@ -404,11 +374,23 @@ body.dark {
   margin-bottom: 3rem;
 }
 
+/* Посвящение во вступительной главе СиВС */
+.sivs-intro-page > p:has(> em):has(> sup) {
+  text-align: right !important;
+  font-style: italic;
+  margin-top: 0.5rem !important;
+  margin-bottom: 3rem !important;
+}
 
+.sivs-intro-page > p:has(> em):has(> sup) em {
+  font-style: inherit;
+}
+
+.sivs-intro-page > p:has(> em):has(> sup) sup {
+  font-style: normal;
+}
 
 /* ---------- Более широкие страницы для всех текстов ---------- */
-
-/* Центральная колонка с текстом — до 1000px, по центру */
 main.main,
 .post-single,
 .post-single .post-content {
@@ -417,7 +399,6 @@ main.main,
   margin-right: auto;
 }
 
-/* На узких экранах — занимать всю ширину с небольшими полями */
 @media (max-width: 1000px) {
   main.main,
   .post-single,
@@ -428,51 +409,39 @@ main.main,
   }
 }
 
-
-
 /* Бо́льший отступ после названия текста */
 .post-header .post-title {
-  margin-bottom: 4rem;  /* можно 3rem, если захочешь меньше */
+  margin-bottom: 4rem;
 }
-
-
 
 /* Мобильный портрет: меньше поля и шрифт поменьше для текста */
 @media (max-width: 600px) and (orientation: portrait) {
-
-  /* Горизонтальный отступ задаём только у main */
   main.main {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
 
-  /* Внутренние контейнеры без дополнительных полей */
   .post-single,
   .post-single .post-content {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* Чуть меньше шрифт и комфортный интерлиньяж в тексте */
   .post-single .post-content {
     font-size: 0.95rem;
     line-height: 1.5;
   }
 }
 
-
-
-
-
-/* --- Сноски: убрать подчёркивание и сделать цифры жирными --- */
+/* --- Общие сноски вне СиВС --- */
 sup a,
 sup a:link,
 sup a:visited {
-  text-decoration: none !important;   /* без подчёркивания */
+  text-decoration: none !important;
   border-bottom: none !important;
   box-shadow: none !important;
   background-image: none !important;
-  font-weight: 700;                   /* ЖИРНЫЕ цифры */
+  font-weight: 700;
 }
 
 sup a:hover,
@@ -482,8 +451,6 @@ sup a:focus {
   box-shadow: none !important;
   font-weight: 700;
 }
-
-
 
 .quote {
   font-style: italic;
@@ -495,13 +462,7 @@ sup a:focus {
   margin-top: 0.75rem;
 }
 
-
-
-
-
-
-
-/* По умолчанию переносы выключены (но длинные слова не ломают вёрстку) */
+/* По умолчанию переносы выключены */
 .post-single .post-content p,
 .quote {
   hyphens: none;
@@ -510,7 +471,6 @@ sup a:focus {
   overflow-wrap: break-word;
 }
 
-/* На мобильных (узкие экраны) включаем автоматические переносы */
 @media (max-width: 768px) {
   .post-single .post-content p,
   .quote {
@@ -520,73 +480,71 @@ sup a:focus {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ---------- СиВС: главы, заголовки, отступы ---------- */
-
-/* Весь контент главы */
 .sivs-chapter {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 4rem;   /* расстояние от стрелок до названия главы */
+  padding-top: 4rem;
 }
 
-/* Заголовок главы (например, "4. Стена из высоких снов") */
 .sivs-chapter-title h1 {
   text-align: center;
-  font-size: 2.6rem;     /* чуть крупнее обычного заголовка */
+  font-size: 2.6rem;
   font-weight: 700;
-  margin: 0 0 10rem 0;   /* отступ вниз от названия до названия волны */
+  margin: 0 0 10rem 0;
 }
 
-/* Подзаголовок волны ("Неоднозначный союзник") */
 .post-single .post-content .sivs-section-heading {
-  font-size: 1.3rem !important;  /* размер текста названия волны */
-  font-weight: 600;              /* НЕ жирный */
-  font-style: italic;            /* курсив */
+  font-size: 1.3rem !important;
+  font-weight: 600;
+  font-style: italic;
   margin: 0 0 1.2rem 0;
 }
 
-/* Краткое описание персонажа / волны */
-.sivs-section p {
+.sivs-section p,
+.sivs-section-desc p {
   margin: 0 0 2.2rem 0;
 }
 
 /* Горизонтальные линии внутри текста СиВС */
 .post-single .post-content .sivs-separator {
+  display: block;
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, .08);
-  margin: 5.5rem 0 !important;   /* отступы от линий до цитат и текста */
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  width: 74%;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-/* Цитаты: без базовых внешних отступов */
+.sivs-separator-top {
+  margin-top: 5.5rem !important;
+  margin-bottom: 5rem !important;
+}
+
+.sivs-separator-before-body {
+  margin-top: 4.5rem !important;
+  margin-bottom: 0 !important;
+}
+
+.sivs-separator-before-lastquote {
+  margin-top: 5.5rem !important;
+  margin-bottom: 0 !important;
+}
+
+/* Линии во вступительной главе СиВС */
+.sivs-intro-page .sivs-separator {
+  margin-top: 2.2rem !important;
+  margin-bottom: 2.2rem !important;
+}
+
+/* Цитаты */
 .sivs-quote-block {
   margin: 0;
 }
 
-/* Увеличенный отступ ТОЛЬКО между двумя подряд идущими цитатами */
 .sivs-quote-block + .sivs-quote-block {
-  margin-top: 5rem;              /* расстояние МЕЖДУ цитатами */
+  margin-top: 5rem;
 }
 
 .sivs-quote-block .quote {
@@ -599,35 +557,281 @@ sup a:focus {
   margin: 0;
 }
 
-/* "Короткие" цитаты: блок прижат к правому краю,
-   ширина по содержимому, автор под цитатой справа */
+/* "Короткие" цитаты */
 .sivs-quote-block-short {
   display: block;
-  width: fit-content;    /* ширина = ширине текста цитаты */
-  margin: 0 0 0 auto;    /* сдвиг блока к правому краю контейнера */
+  width: 100%;
+  margin: 0;
+}
+
+.sivs-quote-block-short .quote {
+  margin: 0 0 1rem 0;
 }
 
 .sivs-quote-block-short .quote-author {
-  text-align: right;     /* подпись под цитатой справа */
+  display: block;
+  width: fit-content;
+  margin: 0 0 0 auto;
+  text-align: right;
   margin-top: 0.5rem;
 }
 
-
+.sivs-quote-block-short .sivs-separator {
+  display: block;
+  width: 74%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
 
 /* Основной текст главы между линиями */
 .sivs-body {
   margin: 3rem 0;
 }
 
-/* Последняя цитата в конце главы — небольшой зазор от линии/футера */
 .sivs-final-quote {
   margin-top: 3rem;
 }
 
-/* Прячем стандартный заголовок PaperMod
-   для страниц, где есть .sivs-chapter */
 .post-single:has(.sivs-chapter) .post-header .post-title {
   display: none;
 }
 
+/* ---------- СиВС: основной текст, сноски и *** ---------- */
 
+/* Основной текст обычных глав */
+.sivs-body p {
+  margin: 0 0 0.65rem 0;
+  line-height: 1.58;
+}
+
+.sivs-body p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+/* Верхние ссылки-сноски в названии главы, названии волны, в обычных главах, в описании волны, в цитатах и во вступлении */
+.sivs-chapter-title sup {
+  vertical-align: super;
+  font-size: 0.75rem;
+  line-height: 0;
+}
+
+.sivs-chapter-title sup a,
+.sivs-chapter-title sup a:link,
+.sivs-chapter-title sup a:visited {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+  font-weight: 700 !important;
+  opacity: 0.88;
+}
+
+.sivs-chapter-title sup a:hover,
+.sivs-chapter-title sup a:focus {
+  opacity: 1;
+}
+
+.sivs-section-heading sup,
+.sivs-body sup,
+.sivs-section-desc sup,
+.sivs-quote-block .quote sup,
+.sivs-intro-page sup {
+  vertical-align: super;
+  font-size: 0.72em;
+  line-height: 0;
+}
+
+.sivs-section-heading sup a,
+.sivs-section-heading sup a:link,
+.sivs-section-heading sup a:visited,
+.sivs-body sup a,
+.sivs-body sup a:link,
+.sivs-body sup a:visited,
+.sivs-section-desc sup a,
+.sivs-section-desc sup a:link,
+.sivs-section-desc sup a:visited,
+.sivs-quote-block .quote sup a,
+.sivs-quote-block .quote sup a:link,
+.sivs-quote-block .quote sup a:visited,
+.sivs-intro-page sup a,
+.sivs-intro-page sup a:link,
+.sivs-intro-page sup a:visited {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+  font-weight: 500 !important;
+  opacity: 0.78;
+}
+
+.sivs-section-heading sup a:hover,
+.sivs-section-heading sup a:focus,
+.sivs-body sup a:hover,
+.sivs-body sup a:focus,
+.sivs-section-desc sup a:hover,
+.sivs-section-desc sup a:focus,
+.sivs-quote-block .quote sup a:hover,
+.sivs-quote-block .quote sup a:focus,
+.sivs-intro-page sup a:hover,
+.sivs-intro-page sup a:focus {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Нижний блок сносок:
+   в обычных главах он теперь после последней цитаты,
+   во вступлении — на странице с .sivs-intro-page */
+.sivs-footnotes-after-lastquote .footnotes,
+.post-single:has(.sivs-intro-page) .footnotes {
+  margin-top: 2rem;
+  font-size: 0.95em;
+}
+
+.sivs-footnotes-after-lastquote .footnotes p,
+.post-single:has(.sivs-intro-page) .footnotes p {
+  margin: 0;
+}
+
+.sivs-footnotes-after-lastquote .footnotes ol,
+.post-single:has(.sivs-intro-page) .footnotes ol {
+  margin: 0 !important;
+  padding-left: 0 !important;
+  list-style: none !important;
+  list-style-type: none !important;
+  counter-reset: sivs-footnote;
+}
+
+.sivs-footnotes-after-lastquote .footnotes li,
+.post-single:has(.sivs-intro-page) .footnotes li {
+  counter-increment: sivs-footnote;
+  position: relative;
+  padding-left: 2rem;
+  margin: 0 0 0.75rem 0;
+  list-style: none !important;
+}
+
+.sivs-footnotes-after-lastquote .footnotes li:last-child,
+.post-single:has(.sivs-intro-page) .footnotes li:last-child {
+  margin-bottom: 0;
+}
+
+.sivs-footnotes-after-lastquote .footnotes li::marker,
+.post-single:has(.sivs-intro-page) .footnotes li::marker {
+  content: "";
+}
+
+/* Убираем стрелку возврата */
+.sivs-footnotes-after-lastquote .footnotes .footnote-backref,
+.post-single:has(.sivs-intro-page) .footnotes .footnote-backref {
+  position: absolute;
+  left: 0;
+  top: 0.02em;
+  font-size: 0;
+  line-height: 1;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+/* Вместо стрелки — подчёркнутый номер-ссылка */
+.sivs-footnotes-after-lastquote .footnotes .footnote-backref::before,
+.post-single:has(.sivs-intro-page) .footnotes .footnote-backref::before {
+  content: counter(sivs-footnote) ".";
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 0.08em;
+  opacity: 0.9;
+}
+
+.sivs-footnotes-after-lastquote .footnotes .footnote-backref:hover::before,
+.sivs-footnotes-after-lastquote .footnotes .footnote-backref:focus::before,
+.post-single:has(.sivs-intro-page) .footnotes .footnote-backref:hover::before,
+.post-single:has(.sivs-intro-page) .footnotes .footnote-backref:focus::before {
+  opacity: 1;
+}
+
+/* *** внутри обычных глав */
+.sivs-body .stars-separator {
+  text-align: center;
+  line-height: 1;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.sivs-body .stars-separator::before {
+  content: "";
+  display: block;
+  height: 2rem;
+}
+
+.sivs-body .stars-separator::after {
+  content: "";
+  display: block;
+  height: 2rem;
+}
+
+/* *** во вступлении */
+.sivs-intro-page .stars-separator {
+  text-align: center;
+  line-height: 1;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.sivs-intro-page .stars-separator::before {
+  content: "";
+  display: block;
+  height: 2rem;
+}
+
+.sivs-intro-page .stars-separator::after {
+  content: "";
+  display: block;
+  height: 2rem;
+}
+
+.sivs-prebody-quotes:empty {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sivs-chapter-title {
+  margin-bottom: 0;
+}
+
+.sivs-chapter-title h1 {
+  margin-bottom: 0;
+}
+
+.sivs-chapter-title + .sivs-section {
+  margin-top: 4.5rem;
+}
+
+.stars-separator-tight {
+  text-align: center;
+  margin: 1rem 0;
+  line-height: 1;
+}
