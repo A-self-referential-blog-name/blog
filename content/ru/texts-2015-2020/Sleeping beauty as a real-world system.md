@@ -4,7 +4,18 @@ weight: 3
 draft: false
 ---
 
-Этот текст, изначально написанный в 2020, превратил в 2025 в статью (см. ниже) и неудачно пытался подать в журналы. Т.к. я ни с кем не смог его обсудить, просто выкладываю здесь. 
+Этот текст, изначально написанный в 2020, превратил в 2025 в статью (см. ниже) и неудачно пытался подать в журналы. Т.к. я ни с кем не смог его обсудить, просто выкладываю здесь (и <a href="https://philpapers.org/rec/BOHSBA" target="_blank" rel="noopener">здесь</a>). 
+
+---
+
+В одном из журналов при отказе дали (11.05.26) адекватный фидбек:  
+
+"Although the idea is interesting, it's not developed in enough detail here to see its force. Is this a normative argument that this is how epistemic systems *should* work, or a descriptive argument that this is how real-world systems *do* work? There are some interesting suggestions in some of the footnotes, but each of these could easily be discussed at much greater length to explain why the method chosen here is the right approach.  
+At this point, there have been enough discussions of Sleeping Beauty over the past few decades that another one needs to do something substantially new to be justified. In this case, that should involve a much more detailed discussion of the kind of epistemic agent that gives rise to this solution. Must an agent have a "probability computing subsystem"? If so, why should it work as described here, by taking the product of a space with another partition, assigning equal probability across this new partition, and then conditioning, rather than doing its calculations in a way that yields a different result?"
+
+Чтобы понять, как ответить на это, мне нужен хоть какой-то диалог с профессиональными философами; у меня его нет, поэтому что делать дальше пока не знаю.
+
+---
 
 Этот текст является единственным из выложенных здесь текстов, который не носит для меня личный/экзистенциальный характер. 
 
