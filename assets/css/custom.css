@@ -835,3 +835,10 @@ sup a:focus {
   margin: 1rem 0;
   line-height: 1;
 }
+
+
+
+
+.semi-bold {
+  font-weight: 600;
+}
