@@ -1,7 +1,6 @@
 ---
 title: "ⅠV. Чувство самой жизни"
 weight: 40
-draft: true
 sivs: true
 sivs_order: 21
 ---

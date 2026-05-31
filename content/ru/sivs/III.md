@@ -1,7 +1,6 @@
 ---
 title: "ⅠⅠⅠ. Странный порядок вещей"
 weight: 30
-draft: true
 sivs: true
 sivs_order: 15
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Ⅰ. Тревога"
 weight: 10
-draft: true
 sivs: true
 sivs_order: 3
 ---

@@ -1,7 +1,6 @@
 ---
 title: "ⅠⅠ. Человеческая ситуация"
 weight: 20
-draft: true
 sivs: true
 sivs_order: 9
 ---

@@ -55,9 +55,9 @@
       {{ end }}
     </ul>
 
-    {{/* СиВС показываем ТОЛЬКО локально (при `hugo server`) и только в RU */}}
-    {{ if and (eq $lang "ru") (hugo.IsServer) }}
-      {{ partial "right-folder.html" . }}
-    {{ end }}
-  </aside>
+{{/* СиВС показываем, если страницы СиВС реально есть в текущей сборке */}}
+{{- $sivsPages := where (where site.RegularPages "Lang" "ru") "Section" "==" "sivs" -}}
+{{ if and (eq $lang "ru") (gt (len $sivsPages) 0) }}
+  {{ partial "right-folder.html" . }}
+{{ end }}
 </div>
