@@ -1,5 +1,5 @@
 ---
 title: "СиВС"
 cascade:
-  draft: true
+  draft: false
 ---
