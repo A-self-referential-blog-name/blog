@@ -20,8 +20,13 @@
             <li class="list-separator"></li>
           {{- end -}}
 
-          {{/* ВИДИМЫЙ разделитель ПЕРЕД ПОСЛЕДНИМ БЛОКОМ: "Суть идеи" + "Откуда цитаты" */}}
+          {{/* ВИДИМЫЙ разделитель перед "Суть идеи" */}}
           {{- if eq $p.Weight 50 -}}
+            <li class="list-separator list-separator-visible">---</li>
+          {{- end -}}
+
+          {{/* ВИДИМЫЙ разделитель перед "Откуда цитаты" */}}
+          {{- if eq $p.Weight 60 -}}
             <li class="list-separator list-separator-visible">---</li>
           {{- end -}}
 
