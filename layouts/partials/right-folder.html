@@ -16,6 +16,11 @@
         {{- range $i, $p := $pages -}}
           {{- $idx := add $i 1 -}}
 
+          {{/* НЕВИДИМЫЙ верхний отступ перед первым пунктом. */}}
+          {{- if eq $idx 1 -}}
+            <li class="list-separator"></li>
+          {{- end -}}
+
           {{/* ТЕХНИЧЕСКИЕ разделители: скрытые, дают отступ следующему пункту. */}}
           {{- if or ($p.Params.separator_before) (in $breaks $idx) (findRE `^Ⅱ\b` $p.Title) -}}
             <li class="list-separator"></li>
