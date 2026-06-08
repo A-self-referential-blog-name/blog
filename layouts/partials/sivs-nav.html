@@ -2,7 +2,7 @@
 {{ if .Params.sivs }}
 
   {{ $current := . }}
-  {{ $pages := where .Site.RegularPages "Params.sivs" true }}
+  {{ $pages := (where .Site.RegularPages "Params.sivs" true).ByWeight }}
 
   {{ $scratch := newScratch }}
   {{ $scratch.Set "prev" nil }}
