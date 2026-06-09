@@ -4,42 +4,38 @@
     <summary class="folder-summary">СиВС (попытка реализации)</summary>
 
     <ul class="sublist">
-      {{/* RU-страницы из секции "sivs", отсортированные по weight */}}
+      {{/* RU-страницы из секции "sivs", отсортированные по sivs_order */}}
       {{- $pages := where (where site.RegularPages "Lang" "ru") "Section" "==" "sivs" -}}
       {{- if gt (len $pages) 0 -}}
-        {{- $pages = $pages.ByWeight -}}
-
-        {{/* Позиции, ПЕРЕД которыми вставляем обычный отступ между крупными частями. */}}
-        {{/* 3 убран, потому что после "Вступление" есть видимый разделитель "---". */}}
-        {{- $breaks := slice 4 10 16 22 -}}
+        {{- $pages = sort $pages "Params.sivs_order" "asc" -}}
 
         {{- range $i, $p := $pages -}}
-          {{- $idx := add $i 1 -}}
+          {{- $order := int (default 0 $p.Params.sivs_order) -}}
 
-          {{/* НЕВИДИМЫЙ верхний отступ перед первым пунктом. */}}
-          {{- if eq $idx 1 -}}
+          {{/* СКРЫТЫЕ отступы только перед крупными частями: I, II, III, IV. */}}
+          {{- if or (eq $order 3) (eq $order 9) (eq $order 15) (eq $order 21) -}}
             <li class="list-separator"></li>
           {{- end -}}
 
-          {{/* ТЕХНИЧЕСКИЕ разделители: скрытые, дают отступ следующему пункту. */}}
-          {{- if or ($p.Params.separator_before) (in $breaks $idx) (findRE `^Ⅱ\b` $p.Title) -}}
-            <li class="list-separator"></li>
-          {{- end -}}
-
-          {{/* ВИДИМЫЙ разделитель перед "Откуда цитаты". */}}
-          {{- if eq $p.Weight 60 -}}
+          {{/* ВИДИМЫЙ разделитель после "20. Благородное молчание", перед "Суть идеи". */}}
+          {{- if eq $order 27 -}}
             <li class="list-separator list-separator-visible">---</li>
           {{- end -}}
 
-          {{/* Сам пункт списка. Первый пункт ("Суть идеи") делаем чуть жирнее. */}}
-          {{- if eq $idx 1 -}}
+          {{/* Сам пункт списка. "Суть идеи" делаем чуть жирнее. */}}
+          {{- if eq $order 27 -}}
             <li><a href="{{ $p.RelPermalink }}" style="font-weight:500;">{{ $p.Title }}</a></li>
           {{- else -}}
             <li><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></li>
           {{- end -}}
 
-          {{/* ВИДИМЫЙ разделитель после "Суть идеи..." и после "Вступление". */}}
-          {{- if or (eq $idx 1) (eq $p.Title "Вступление") -}}
+          {{/* ВИДИМЫЙ разделитель после "Вступление". */}}
+          {{- if eq $order 1 -}}
+            <li class="list-separator list-separator-visible">---</li>
+          {{- end -}}
+
+          {{/* ВИДИМЫЙ разделитель после "Суть идеи", перед "Откуда цитаты". */}}
+          {{- if eq $order 27 -}}
             <li class="list-separator list-separator-visible">---</li>
           {{- end -}}
 
