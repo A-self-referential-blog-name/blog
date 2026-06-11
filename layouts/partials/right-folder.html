@@ -22,12 +22,8 @@
             <li class="list-separator list-separator-visible">---</li>
           {{- end -}}
 
-          {{/* Сам пункт списка. "Суть идеи" делаем чуть жирнее. */}}
-          {{- if eq $order 27 -}}
-            <li><a href="{{ $p.RelPermalink }}" style="font-weight:500;">{{ $p.Title }}</a></li>
-          {{- else -}}
-            <li><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></li>
-          {{- end -}}
+{{/* Сам пункт списка. */}}
+<li><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></li>
 
           {{/* ВИДИМЫЙ разделитель после "Вступление". */}}
           {{- if eq $order 1 -}}
