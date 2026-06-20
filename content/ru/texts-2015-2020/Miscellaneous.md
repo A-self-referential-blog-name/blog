@@ -1,5 +1,5 @@
 ---
-title: "Разное (64 фрагмента)"
+title: "Разное (64)"
 weight: 2
 draft: false
 ---
